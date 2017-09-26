@@ -1,6 +1,5 @@
 ## Leonardo Cotta
 
-```markdown
 Hi! I'm a 1st year PhD student in Computer Science @ Purdue University. Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
 
 My interests lie in Machine Learning, Theoretical Computer Science and Information Theory. Previously, I worked with IoT and Quantum Computing theory (at the University of Calgary).
