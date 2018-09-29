@@ -1,4 +1,4 @@
-## Leonardo Cotta
+## About
 
 Hi! I'm a 2nd year PhD student in Computer Science @ Purdue University. Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
 
