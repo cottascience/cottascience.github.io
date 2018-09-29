@@ -6,5 +6,6 @@ My interests lie in Machine Learning and Theoretical Computer Science. More spec
 
 The best way to read about my research is going to [my GoogleScholar profile](https://goo.gl/zrNQue). I try to maintain my repositories here at Github as up to date as possible. If you don't find what you are looking for here or if you have any extra questions about my research, do not hesitate to email me!
 
+## Contact
 
-
+cotta [at] purdue [dot] edu 
