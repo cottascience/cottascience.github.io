@@ -9,3 +9,5 @@ The best way to read about my research is going to [my GoogleScholar profile](ht
 ## Contact
 
 cotta [at] purdue [dot] edu 
+
+[Follow me on Twitter](www.twitter.com/cottascience)! I promise I'll reduce my rate of football tweets ;-)
