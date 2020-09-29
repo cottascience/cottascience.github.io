@@ -16,7 +16,9 @@ The best way to read about my research is going to [my GoogleScholar profile](ht
 
 ## News
 
-Accepted at NeurIPS 2020: **Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**, Leonardo Cotta, Carlos H.C. Teixeira, Ananthram Swami, Bruno Ribeiro
+<span style="color:red">**Accepted at NeurIPS 2020: **</span>
+**Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**
+Leonardo Cotta, Carlos H.C. Teixeira, Ananthram Swami, Bruno Ribeiro
 
 ## Contact
 
