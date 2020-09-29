@@ -15,11 +15,10 @@ Previously, I worked with distributed algorithms (@ UFMG) and Quantum Computing 
 The best way to read about my research is going to [my GoogleScholar profile](https://goo.gl/zrNQue). I try to maintain my repositories here at Github as up to date as possible. If you don't find what you are looking for here or if you have any extra questions about my research, drop me a line!
 
 ## News
-```diff
-+ Accepted at NeurIPS 2020:
+
+<span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
 **Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**
 Leonardo Cotta, Carlos H.C. Teixeira, Ananthram Swami, Bruno Ribeiro
-```
 
 ## Contact
 
