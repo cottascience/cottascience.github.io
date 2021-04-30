@@ -2,11 +2,12 @@
 
 Hi! I'm a PhD student in Computer Science @ Purdue University, where I'm advised by the amazing Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
 
-My interests lie broadly in Machine Learning and Theoretical Computer Science. More specifically, I'm interested in 
+My interests lie broadly in Geometric Deep Learning and Theoretical Computer Science. More specifically, I'm interested in 
 
   1. Invariant models of graphs, sets and posets.
   2. Energy-based models.
   3. Stochastic optimization (MCMC methods).
+  4. Property testing
 
 More recently, I've also developed interest in connecting the above topics to random matrix theory and algebraic combinatorics.
 
