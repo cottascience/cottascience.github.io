@@ -19,6 +19,9 @@ The best way to read about my research is going to [my GoogleScholar profile](ht
 
 ## News
 
+<span style="background-color: ##00FF00">I'll be on an (remote) internship this summer (2021) at Intel Labs!</span>
+
+
 <span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
 
 **Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**
