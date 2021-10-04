@@ -19,6 +19,12 @@ The best way to read about my research is going to [my GoogleScholar profile](ht
 
 ## News
 
+<span style="background-color: #FFFF00">Accepted at NeurIPS 2021:</span>
+
+**Reconstruction for Powerful Graph Representations**
+
+Leonardo Cotta, Christopher Morris, Bruno Ribeiro [PRE-PRINT](https://arxiv.org/abs/2110.00577)
+
 <span style="background-color: #FFFF00">I'll be on an (remote) internship this summer (2021) at Intel Labs!</span>
 
 <span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
