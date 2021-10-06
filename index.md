@@ -5,15 +5,15 @@ Hi! I'm a PhD student in Computer Science @ Purdue University, where I'm advised
 My interests lie broadly in Geometric Deep Learning and Theoretical Computer Science. More specifically, I'm interested in 
 
   1. Invariant models of graphs, sets and posets.
-  2. Energy-based models.
+  2. Causal Inference.
   3. Stochastic optimization (MCMC methods).
-  4. Property testing
+  4. Combinatorics.
 
-More recently, I've also developed interest in connecting the above topics to random matrix theory and algebraic combinatorics.
+*Applications:* recommender systems, bioinformatics, computer networks and sports analytics.
 
 Previously, I worked with distributed algorithms (@ UFMG) and Quantum Computing Theory (@ University of Calgary).
 
-My CV (September/2020) is [here](CVsept2020.pdf)
+My CV (October/2021) is [here](CV-2021.pdf)
 
 The best way to read about my research is going to [my GoogleScholar profile](https://goo.gl/zrNQue). I try to maintain my repositories here at Github as up to date as possible. If you don't find what you are looking for here or if you have any extra questions about my research, drop me a line!
 
@@ -38,3 +38,8 @@ Leonardo Cotta, Carlos H.C. Teixeira, Ananthram Swami, Bruno Ribeiro
 cotta [at] purdue [dot] edu
 
 [Follow me on Twitter](https://twitter.com/cottascience)!
+
+## Service
+
+AAAI 2021 TPC
+SDM 2021 TPC
