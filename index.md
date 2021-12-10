@@ -1,13 +1,13 @@
 ## About
 
-Hi! I'm a PhD student in Computer Science @ Purdue University, where I'm advised by the amazing Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
+Hi! I'm a PhD student in Computer Science @ Purdue University, where I'm advised by Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
 
 My interests lie broadly in Geometric Deep Learning and Theoretical Computer Science. More specifically, I'm interested in 
 
   1. Invariant models of graphs, sets and posets.
   2. Causal Inference.
-  3. Stochastic optimization (MCMC methods).
-  4. Combinatorics.
+  3. MCMC methods.
+  4. Combinatorics (optimization and graph theory).
 
 *Applications:* recommender systems, bioinformatics, computer networks and sports analytics.
 
@@ -23,7 +23,7 @@ The best way to read about my research is going to [my GoogleScholar profile](ht
 
 **Reconstruction for Powerful Graph Representations**
 
-Leonardo Cotta, Christopher Morris, Bruno Ribeiro [PRE-PRINT](https://arxiv.org/abs/2110.00577)
+Leonardo Cotta, Christopher Morris, Bruno Ribeiro
 
 <span style="background-color: #FFFF00">I'll be on an (remote) internship this summer (2021) at Intel Labs!</span>
 
