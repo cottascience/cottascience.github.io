@@ -47,6 +47,8 @@ cotta [at] purdue [dot] edu
 
 ## Service
 
+LOG Conference 2022 Organizing Committee
+
 NeurIPS 2022 TPC
 
 AAAI 2021 TPC
