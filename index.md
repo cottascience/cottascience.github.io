@@ -47,6 +47,8 @@ cotta [at] purdue [dot] edu
 
 ## Service
 
+NeurIPS 2022 TPC
+
 AAAI 2021 TPC
 
 SDM 2021 TPC
