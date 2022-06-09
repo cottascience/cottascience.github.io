@@ -1,8 +1,8 @@
 ## About
 
-Hi! I'm a PhD candidate in Computer Science @ Purdue University, where I'm advised by Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Previously, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
+Hi! I'm a PhD candidate in Computer Science @ Purdue University, where I'm advised by Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Before that, I was a B.Sc. student (also in CS) @ UFMG, Brazil.
 
-Previously, I worked with distributed algorithms (@ UFMG) and Quantum Computing Theory (@ University of Calgary).
+During my time as a B.Sc. student I worked with distributed algorithms (@ UFMG) and Quantum Computing Theory (@ University of Calgary).
 
 My CV (October/2021) is [here](CV-2021.pdf)
 
