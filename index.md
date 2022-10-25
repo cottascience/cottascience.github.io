@@ -2,8 +2,6 @@
 
 Hi! I'm a Postdoc Fellow @ [Vector Institute](https://vectorinstitute.ai/). I received my PhD degree in Computer Science @ Purdue University, where I was advised by Prof. [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Before that ---in a distant and happy land--- I was a B.Sc. student (also in CS) @ UFMG, Brazil. During my time as a B.Sc. student I worked with distributed algorithms (@ UFMG) and Quantum Computing Theory (@ University of Calgary).
 
-My CV (October/2022) is [here](CV-oct-2022.pdf)
-
 The best way to read about my research is going to [my GoogleScholar profile](https://goo.gl/zrNQue). I try to maintain my repositories here at Github as up to date as possible. If you don't find what you are looking for or if you have any extra questions about my research, drop me a line!
 
 ## Research
