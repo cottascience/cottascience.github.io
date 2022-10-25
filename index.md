@@ -18,27 +18,11 @@ I'm interested in understanding how machines can learn to reason with combinator
 
 ## News
 
-<span style="background-color: #FFFF00">I started as a Postdoc Fellow at the Vector Institute! If you're ever in Toronto and want to talk research, drop me a line! </span>
-
-<span style="background-color: #FFFF00">I will be mentoring a project on poset representation learning at [LOGML](https://www.logml.ai/) this year! Apply! </span>
-
-<span style="background-color: #FFFF00">Accepted at NeurIPS 2021:</span>
-
-**Reconstruction for Powerful Graph Representations**
-
-Leonardo Cotta, Christopher Morris, Bruno Ribeiro
-
-<span style="background-color: #FFFF00">I'll be on an (remote) internship this summer (2021) at Intel Labs!</span>
-
-<span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
-
-**Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**
-
 Leonardo Cotta, Carlos H.C. Teixeira, Ananthram Swami, Bruno Ribeiro
 
 ## Contact
 
-cotta [at] purdue [dot] edu
+firstname.lastname [at] vectorinstitute [dot] ai
 
 [Follow me on Twitter](https://twitter.com/cottascience)!
 
