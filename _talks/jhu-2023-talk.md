@@ -2,7 +2,7 @@
 title: "Causal Lifting and Link Prediction"
 collection: talks
 type: "Talk"
-permalink: /talks/jhu-2023-talk.md
+permalink: /talks/jhu-2023-talk
 venue: "CISS 2023: Lecture Presentation."
 date: 2012-03-22
 location: "Baltimore, MD"
