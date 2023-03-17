@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Leonardo Cotta / Cotta"
+title                    : "Academic Webpage"
 title_separator          : "-"
 name                     : &name "Leonardo Cotta"
 description              : &description "Postdoc fellow at the Vector Institute"
