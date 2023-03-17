@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+Updated March 2023.
 Education
 =====
 * PhD in Computer Science, Purdue University, August 2022
@@ -31,6 +32,10 @@ Work experience
 * 2015-2017: Research Assistant
    * Universidade Federal de Minas Gerais
    * Supervisor: [Antonio A.F. Loureiro](https://homepages.dcc.ufmg.br/~loureiro/)
+
+* Summer 2014: Research Assistant
+   * University of Calgary
+   * Supervisor: [Peter Hoyer](https://pages.cpsc.ucalgary.ca/~hoyer/)
 
 Patents
 ======
