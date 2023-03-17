@@ -7,9 +7,10 @@ redirect_from:
   - /resume
 ---
 
+_Last update: March, 2023._
+
 {% include base_path %}
 
-Updated March 2023.
 Education
 =====
 * PhD in Computer Science, Purdue University, August 2022
