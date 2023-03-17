@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Leonardo Cotta"
-  avatar           : "profile-round.jpg"
+  avatar           : "/profile-round.jpg"
   bio              : "Postdoc fellow at the Vector Institute"
   location         : "Toronto, ON, Canada"
   employer         :
@@ -99,10 +99,10 @@ author:
   github           : "cottascience"
   google_plus      :
   keybase          :
-  instagram        : "instagram.com/leocotta"
+  instagram        : "leocotta"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "linkedin.com/in/cotta"
+  linkedin         : "cotta"
   orcid            :
   pinterest        :
   soundcloud       :
