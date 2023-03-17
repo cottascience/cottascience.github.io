@@ -1,10 +1,22 @@
----
-layout: default
 title: Leonardo Cotta
-logo: "./profile-round.jpg"
-description: "Postdoc Fellow @ Vector Institute"
-email: "firstname.lastname |at| vectorinstititue |dot| ai"
-#twitter: "@cottascience"
+email: leonardo.cotta@vectorinstitute.ai
+description: >-
+  Leo's personal/academic website.
+url: "https://cottascience.github.io"
+baseurl: ""
+twitter_username: cottascience
+github_username:  cottascience
+
+plugins:
+  - jekyll-sitemap
+
 theme: jekyll-theme-minimal
-year: 2023
----
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Leonardo Cotta"
+
