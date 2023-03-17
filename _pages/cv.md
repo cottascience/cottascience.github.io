@@ -10,31 +10,38 @@ redirect_from:
 {% include base_path %}
 
 Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+=====
+* PhD in Computer Science, Purdue University, August 2022
+* BSc in Computer Science, Universidade Federal de Minas Gerais, December 2016
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* October 2022 - Present: Postdoc Fellow
+  * Vector Institute
+  * Supervisor: [Chris J. Maddison](https://www.cs.toronto.edu/~cmaddis/)
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
+* Summer 2021: Research Intern
+  * Intel Labs
+  * Supervisor: [Nesreen K. Ahmed](http://nesreenahmed.com/)
+
+* 2017-2022: Research Assistant
+  * Purdue University
+  * Supervisor: [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/)
+
+* 2015-2017: Research Assistant
+   * Universidade Federal de Minas Gerais
+   * Supervisor: [Antonio A.F. Loureiro](https://homepages.dcc.ufmg.br/~loureiro/)
+
+Patents
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* 2019: System and method for authentication of things, Patent Number: 10523437
+
+Awards
+======
+* 2022: Postdoctoral Fellowship, Vector Institute
+* 2017: Graduate Research Fellowship, Qatar Computing Research Institute
+* 2014: Science Without Borders Scholarship, University of Calgary/CNPq
+* 2013: Young Talents of Science Award, CAPES
 
 Publications
 ======
@@ -56,4 +63,12 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* ICML 2023 PC
+* ICLR 2023 PC
+* AAAI 2023 Senior PC
+* NeurIPS 2022 PC
+* LOGML 2022 Mentor
+* LoG 2022 Organizing Committee
+* AAAI 2021 PC
+* SDM 2021 (SIAM International Conference on Data Mining) PC
+
