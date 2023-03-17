@@ -7,5 +7,6 @@ venue: "CISS 2023: Lecture Presentation."
 date: 2012-03-22
 location: "Baltimore, MD"
 ---
-Lecture session A2L-D: Theory of Equivariant Machine Learning II - Invited Special Session.
+A2L-D: Theory of Equivariant Machine Learning II - Invited Special Session.
+
 Reference: Cotta, L., Bevilacqua, B., Ahmed, N., & Ribeiro, B. (2023). Causal Lifting and Link Prediction. [arXiv preprint](https://arxiv.org/abs/2302.01198)
