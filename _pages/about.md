@@ -40,4 +40,4 @@ Leonardo Cotta, Christopher Morris, Bruno Ribeiro
 
 <span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
 
-**Unsupervised Joint <img src="https://render.githubusercontent.com/render/math?math=k">-node Graph Representations with Compositional Energy-Based Models**
+**Unsupervised Joint $k$-node Graph Representations with Compositional Energy-Based Models**
