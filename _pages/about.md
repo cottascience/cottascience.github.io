@@ -10,11 +10,11 @@ redirect_from:
 
 ### About
 
-Hi! I'm a postdoc fellow at the [Vector Institute](https://vectorinstitute.ai/), where I'm hosted by [Chris J. Maddison](https://www.cs.toronto.edu/~cmaddis/). I received my PhD degree in computer science at Purdue University, where I was advised by [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Before that ---in a distant and happy land--- I was a BSc student (also in CS) at UFMG, Brazil. During my time as an undergrad I worked with distributed algorithms (at UFMG) and Quantum Computing Theory (at University of Calgary).
+I'm a postdoc fellow at the [Vector Institute](https://vectorinstitute.ai/), where I'm hosted by [Chris J. Maddison](https://www.cs.toronto.edu/~cmaddis/). I received my PhD degree in computer science at Purdue University, where I was advised by [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Before that ---in a distant and happy land--- I was a BSc student (also in CS) at UFMG, Brazil. During my time as an undergrad I worked with distributed algorithms (at UFMG) and Quantum Computing Theory (at University of Calgary).
 
 ### Research
 
-I'm interested in understanding how machines can learn to reason with combinatorial and invariant data, *e.g.* graphs, sets,  posets, and homogenous spaces. In this context, I often use tools from statistical machine learning, causal inference, Monte Carlo sampling, combinatorics, and abstract algebra.
+I'm broadly interested in statistical and causal machine learning. More specifically, I study the interplay between symmetries, computation, and learning. How can we leverage these concepts to build better, and practical, machine learning methodology? Most of the problems I like to work with rise from the (possible) combinatorial structure of data. Next, you can see a few perspectives on this. 
 
 **Invariant representations of combinatorial data.** Representations that incorporate the inherent invariances of combinatorial data result in learning algorithms with better generalization capabilities. I am interested in designing representations of graphs, sets and posets that both incorporate the natural invariances present in the data and are expressive enough to distinguish different combinatorial objects. Finally, I'm also interested in better quantifying the effect of an specific invariance feature in the generalization performance of a learning algorithm.
 
