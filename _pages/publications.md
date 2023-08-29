@@ -4,8 +4,5 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+The best place to check my publications and bibliometrics is [Google Scholar](https://scholar.google.com/citations?user=0GI4MyoAAAAJ&hl=pt-BR).
 
