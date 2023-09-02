@@ -18,9 +18,9 @@ I'm broadly interested in statistical and causal machine learning. More specific
 
 ### 🗞️ News 
 
-* New pre-print available! "Probabilistic Invariant Learning with Randomized Linear Classifiers" is now on [arXiv](https://arxiv.org/abs/2308.04412).
+* New pre-print available! **"Probabilistic Invariant Learning with Randomized Linear Classifiers"** is now on [arXiv](https://arxiv.org/abs/2308.04412).
 
-* Our work on "Causal Lifting and Link Prediction" is now published (w/ open access) in the Proceedings of the Royal Society A. Click [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2023.0121) to check it out.
+* Our work on **"Causal Lifting and Link Prediction"** is now published (w/ open access) in the Proceedings of the Royal Society A. Click [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2023.0121) to check it out.
 
 * <span style="background-color: #FFFF00">I started as a Postdoc Fellow at the Vector Institute! If you're ever in Toronto and want to talk research, drop me a line! </span>
 
