@@ -18,18 +18,13 @@ I'm broadly interested in statistical and causal machine learning. More specific
 
 ### 🗞️ News 
 
+* New pre-print available! "Probabilistic Invariant Learning with Randomized Linear Classifiers" is now on [arXiv](https://arxiv.org/abs/2308.04412).
+
+* Our work on "Causal Lifting and Link Prediction" is now published (w/ open access) in the Proceedings of the Royal Society A. Click [here](https://royalsocietypublishing.org/doi/10.1098/rspa.2023.0121) to check it out.
+
 * <span style="background-color: #FFFF00">I started as a Postdoc Fellow at the Vector Institute! If you're ever in Toronto and want to talk research, drop me a line! </span>
 
-* <span style="background-color: #FFFF00">I will be mentoring a project on poset representation learning at [LOGML](https://www.logml.ai/) this year! Apply! </span>
 
-* <span style="background-color: #FFFF00">Accepted at NeurIPS 2021:</span>
 
-**Reconstruction for Powerful Graph Representations**
 
-Leonardo Cotta, Christopher Morris, Bruno Ribeiro
 
-* <span style="background-color: #FFFF00">I'll be on an (remote) internship this summer (2021) at Intel Labs!</span>
-
-* <span style="background-color: #FFFF00">Accepted at NeurIPS 2020:</span>
-
-**Unsupervised Joint $k$-node Graph Representations with Compositional Energy-Based Models**
