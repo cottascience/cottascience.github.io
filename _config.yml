@@ -3,30 +3,30 @@ markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Site Settings
-title: "Site Template"
-subtitle: "Awesome Site Template"
-name: "Your Name"
-description: "Your website description!"
+title: "Leonardo Cotta"
+subtitle: "ML methods and theory"
+name: "Leonardo Cotta"
+description: "Leo's Personal Webpage"
 locale: "en-US"
 breadcrumbs: true
 search: true
 
 # Site Author
 author:
-  name   : "Your Name"
-  bio: "Your Bio"
-  avatar : "https://avatars.githubusercontent.com/u/9919?s=110&v=4"
-  location: Localhost, GitHub
+  name   : "Leonardo Cotta"
+  bio: "Postdoc Fellow"
+  avatar : "profile-blog.png"
+  location: Toronto, Canada
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/"
+      url: "https://www.linkedin.com/in/cotta"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "YouTube"
-      icon: "fab fa-fw fa-youtube"
-      url: "https://www.youtube.com/"
+      url: "https://github.com/cottascience"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://www.twitter.com/cottascience"
 
 # Social Sharing
 og_image: "https://avatars.githubusercontent.com/u/9919?s=110&v=4"
@@ -35,7 +35,7 @@ og_image: "https://avatars.githubusercontent.com/u/9919?s=110&v=4"
 permalink: /:categories/:title/
 paginate: 5
 paginate_path: /page:num/
-timezone: Europe/Paris
+timezone: East/USA
 atom_feed:
   hide: true
 
