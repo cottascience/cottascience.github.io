@@ -1,6 +1,6 @@
 ---
 title: "Leonardo Cotta"
-permalink: /about-leonardo-cotta/
+permalink: /about/
 ---
 
 # 💬 About
