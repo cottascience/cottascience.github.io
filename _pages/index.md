@@ -16,39 +16,28 @@ I'm broadly interested in statistical and causal machine learning. More specific
 
 For full list and metrics, see [Google Scholar](https://scholar.google.com/citations?user=0GI4MyoAAAAJ&hl=pt-BR).
 
-- **[Probabilistic Invariant Learning with Randomized Linear Classifiers](https://openreview.net/forum?id=WwP2JaXAtB)**
-    
-    L Cotta, G Yehuda, A Schuster, CJ Maddison
-    
-    NeurIPS, 2023
+- **[Probabilistic Invariant Learning with Randomized Linear Classifiers](https://openreview.net/forum?id=WwP2JaXAtB)**    
+    _L Cotta, G Yehuda, A Schuster, CJ Maddison
+    NeurIPS, 2023_
     
 - **[Causal Lifting and Link Prediction](https://royalsocietypublishing.org/doi/full/10.1098/rspa.2023.0121)**
     
-    L Cotta, B Bevilacqua, N Ahmed, B Ribeiro
-    
-    Proceedings of the Royal Society A, 2023
+    _L Cotta, B Bevilacqua, N Ahmed, B Ribeiro
+    Proceedings of the Royal Society A, 2023_
     
 - **[Reconstruction for Powerful Graph Representations](https://papers.nips.cc/paper_files/paper/2021/hash/0d8080853a54f8985276b0130266a657-Abstract.html)**
-    
-    L Cotta, C Morris, B Ribeiro
-    
-    NeurIPS, 2021
+    _L Cotta, C Morris, B Ribeiro
+    NeurIPS, 2021_
     
 - **[Unsupervised Joint k-node Graph Representations with Compositional Energy-Based Models](https://papers.nips.cc/paper_files/paper/2020/hash/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Abstract.html)**
-    
-    L Cotta, CHC Teixeira, A Swami, B Ribeiro, 2020
-    
-    NeurIPS, 2020
+    _L Cotta, CHC Teixeira, A Swami, B Ribeiro, 2020
+    NeurIPS, 2020_
     
 - **[Graph Pattern Mining and Learning through User-defined Relations](https://ieeexplore.ieee.org/document/8594979)**
-    
-    CHC Teixeira, L Cotta, B Ribeiro, W Meira Jr
-    
-    ICDM, 2018
+    _CHC Teixeira, L Cotta, B Ribeiro, W Meira Jr
+    ICDM, 2018_
     
 - **[AoT: Authentication and Access Control for the Entire IoT Device Life-Cycle](https://dl.acm.org/doi/10.1145/2994551.2994555)**
-    
-    AL Maia Neto, ALF Souza, Í Cunha, M Nogueira, IO Nunes, L Cotta, N Gentille, AAF Loureiro, DF Aranha, HK Patil, LB Oliveira
-    
-    ACM SenSys, 2016
+    _AL Maia Neto, ALF Souza, Í Cunha, M Nogueira, IO Nunes, L Cotta, N Gentille, AAF Loureiro, DF Aranha, HK Patil, LB Oliveira
+    ACM SenSys, 2016_
 
