@@ -1,6 +1,7 @@
 ---
+layout: home
+permalink: /
 title: "Leonardo Cotta"
-permalink: /about/
 ---
 
 # 💬 About
