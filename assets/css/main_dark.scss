@@ -48,24 +48,3 @@ h1, h2, h3, h4, h5, h6 {
 
   // Add more selectors as needed
 }
-
-// Aggressive override for all text in the author sidebar
-.sidebar .author__content *,
-.sidebar .author__urls-wrapper *,
-.author__urls.social-icons * {
-  font-family: "Times New Roman", Times, serif !important;
-}
-
-// Target specific elements (adjust class names if needed)
-.author__name,
-.author__bio,
-.author__urls-wrapper .author__urls,
-.author__urls-wrapper .author__urls li,
-.author__location {
-  font-family: "Times New Roman", Times, serif !important;
-}
-
-// Override any potential inline styles
-[style*="font-family"] {
-  font-family: "Times New Roman", Times, serif !important;
-}
