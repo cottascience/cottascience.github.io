@@ -18,7 +18,7 @@ a:active {
 // New styles for white background and old HTML-like font
 body {
     background-color: white !important;
-    font-family: "Courier New", Courier, monospace !important;
+    font-family: "Times New Roman", Times, serif !important;
 }
 
 // Optional: Adjust text color for better contrast on white background
@@ -53,25 +53,25 @@ h1, h2, h3, h4, h5, h6 {
 .nav__items a,
 .greedy-nav a,
 .visible-links a {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 1em !important; // Adjust size as needed
 }
 
 // Target dropdown menus if present
 .dropdown .dropdown-menu a {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 0.9em !important; // Adjust size as needed
 }
 
 // Target sidebar navigation if present
 .nav__list .nav__items a {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 0.9em !important; // Adjust size as needed
 }
 
 // Target mobile menu if it uses different classes
 .greedy-nav .visible-links a,
 .greedy-nav .hidden-links a {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 1em !important; // Adjust size as needed
 }
