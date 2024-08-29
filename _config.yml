@@ -4,7 +4,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Site Settings
 title: "Leonardo Cotta"
-subtitle: "ML methods and theory"
+subtitle: "AI for science and health"
 name: "Leonardo Cotta"
 description: "Leo's Personal Webpage"
 locale: "en-US"
