@@ -48,3 +48,23 @@ h1, h2, h3, h4, h5, h6 {
 
   // Add more selectors as needed
 }
+
+.author__content {
+  .author__name {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .author__bio {
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+.author__urls-wrapper {
+  .author__urls {
+    font-family: "Times New Roman", Times, serif;
+    
+    .author__link {
+      font-family: "Times New Roman", Times, serif;
+    }
+  }
+}
