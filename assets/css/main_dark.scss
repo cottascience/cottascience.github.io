@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar .author__content *,
 .sidebar .author__urls-wrapper *,
 .author__urls.social-icons * {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 // Target specific elements (adjust class names if needed)
@@ -62,10 +62,10 @@ h1, h2, h3, h4, h5, h6 {
 .author__urls-wrapper .author__urls,
 .author__urls-wrapper .author__urls li,
 .author__location {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 // Override any potential inline styles
 [style*="font-family"] {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
