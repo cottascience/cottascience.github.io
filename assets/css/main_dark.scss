@@ -17,3 +17,36 @@ a:active {
 .archive__item-teaser {
     margin-bottom: 80px;
 }
+---
+---
+@charset "utf-8";
+$link-color: #00adb5;
+@import "minimal-mistakes/skins/default"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Your existing custom styles
+a:visited,
+a:link,
+a:active {
+    text-decoration: none !important;
+}
+.archive__item-teaser {
+    margin-bottom: 80px;
+}
+
+// New styles for white background and old HTML-like font
+body {
+    background-color: white !important;
+    font-family: "Courier New", Courier, monospace !important;
+}
+
+// Optional: Adjust text color for better contrast on white background
+body,
+.page__content {
+    color: #000 !important;
+}
+
+// Optional: Adjust headings if needed
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Times, serif !important;
+}
