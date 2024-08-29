@@ -31,3 +31,20 @@ body,
 h1, h2, h3, h4, h5, h6 {
     font-family: "Times New Roman", Times, serif !important;
 }
+
+// Adjust scaling for larger screens
+@media screen and (min-width: 1024px) {
+  html, body {
+    font-size: 14px; // Adjust this value as needed
+  }
+
+  .page__content {
+    font-size: 0.8em; // Adjust this value as needed
+  }
+
+  .page__title, .archive__item-title {
+    font-size: 1.5em; // Adjust heading sizes if needed
+  }
+
+  // Add more selectors as needed
+}
