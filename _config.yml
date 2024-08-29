@@ -10,7 +10,6 @@ description: "Leo's Personal Webpage"
 locale: "en-US"
 breadcrumbs: true
 search: true
-minimal_mistakes_skin: "light"
 
 # Site Author
 author:
