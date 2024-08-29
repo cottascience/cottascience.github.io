@@ -17,8 +17,8 @@ a:active {
 
 // New styles for white background and old HTML-like font
 body {
-    background-color: white !important;
-    font-family: "Courier New", Courier, monospace !important;
+    background-color: #FFF9F5 !important;
+    font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, Times, serif !important;
 }
 
 // Optional: Adjust text color for better contrast on white background
@@ -27,51 +27,32 @@ body,
     color: #000 !important;
 }
 
-// Optional: Adjust headings if needed
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Times New Roman", Times, serif !important;
+.masthead,
+.greedy-nav,
+.masthead__menu-item,
+.visible-links,
+.hidden-links {
+  background-color: #FFF9F5 !important;
 }
+
+// Optional: Adjust headings if needed
+// h1, h2, h3, h4, h5, h6 {
+//     font-family: "Times New Roman", Times, serif !important;
+// }
 
 // Adjust scaling for larger screens
 @media screen and (min-width: 1024px) {
   html, body {
-    font-size: 14px; // Adjust this value as needed
+    font-size: 16px; // Adjust this value as needed
   }
 
   .page__content {
-    font-size: 0.8em; // Adjust this value as needed
+    font-size: 1.0em; // Adjust this value as needed
   }
 
   .page__title, .archive__item-title {
-    font-size: 1.5em; // Adjust heading sizes if needed
+    font-size: 1.8em; // Adjust heading sizes if needed
   }
 
   // Add more selectors as needed
-
-// Target navigation menu items
-.masthead__menu-item,
-.nav__items a,
-.greedy-nav a,
-.visible-links a {
-  font-family: "Courier New", Courier, monospace !important;
-  font-size: 1em !important; // Adjust size as needed
 }
-
-// Target dropdown menus if present
-.dropdown .dropdown-menu a {
-  font-family: "Courier New", Courier, monospace !important;
-  font-size: 0.9em !important; // Adjust size as needed
-}
-
-// Target sidebar navigation if present
-.nav__list .nav__items a {
-  font-family: "Courier New", Courier, monospace !important;
-  font-size: 0.9em !important; // Adjust size as needed
-}
-
-// Target mobile menu if it uses different classes
-.greedy-nav .visible-links a,
-.greedy-nav .hidden-links a {
-  font-family: "Courier New", Courier, monospace !important;
-  font-size: 1em !important; // Adjust size as needed
-}}
