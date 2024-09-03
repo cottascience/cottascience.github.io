@@ -10,7 +10,7 @@ I'm a postdoc fellow at [Vector Institute](https://vectorinstitute.ai/), where 
 
 # 📝 Research
 
-I develop machine learning and  causal inference methods for applications in science and healthcare,.
+I develop machine learning and  causal inference methods for applications in science and healthcare.
 My long-term goal is to discover new treatments for diseases with high unmet medical needs and implement intelligent health systems. To this end, my work contributes algorithms and models that can leverage diverse, complex data to discover, evaluate, deliver, and monitor therapeutic and policy interventions.
 
 # 🗞️ Recent Preprints
