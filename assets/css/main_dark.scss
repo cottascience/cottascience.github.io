@@ -35,6 +35,19 @@ body,
   background-color: #FFE7C7 !important;
 }
 
+// Your custom styles go here
+a {
+  color: #8E4585 !important;
+  
+  &:visited {
+    color: #8E4585 !important;
+  }
+  
+  &:hover {
+    color: #8E4585 !important;
+  }
+}
+
 // Optional: Adjust headings if needed
 // h1, h2, h3, h4, h5, h6 {
 //     font-family: "Times New Roman", Times, serif !important;
