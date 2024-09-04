@@ -16,9 +16,7 @@ author:
   name   : "Leonardo Cotta"
   bio: "Postdoc Fellow"
   avatar : "profile-blog.png"
-  location:
-    label: "Toronto, Canada"
-    url: "https://www.google.com/maps/place/Toronto,+ON,+Canada"
+  location: "Toronto, Canada
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
