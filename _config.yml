@@ -3,9 +3,9 @@ markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Site Settings
-title: ""
-subtitle: "AI for science and health"
-name: "Leonardo Cotta"
+title: "ML & Causal Inference"
+subtitle: "Science & Health"
+name: ""
 description: "Leo's Personal Webpage"
 locale: "en-US"
 breadcrumbs: true
