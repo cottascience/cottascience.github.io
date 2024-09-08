@@ -29,6 +29,7 @@ body,
 
 h1, h2, h3, h4, h5, h6 {
   color: #2C3E50 !important; /* Use your desired header color here */
+  text-transform: uppercase !important;
 }
 
 
@@ -54,8 +55,8 @@ a {
 }
 
 .page__hero--overlay .btn {
-  background-color: #3498DB;
-  color: #F5F7FA;              //Text color
+  background-color: #F5F7FA;
+  color: #2C3E50;              //Text color
   border: none;               // Remove border
   padding: 12px 24px;         // Increase padding
   font-weight: bold;          // Bold text
