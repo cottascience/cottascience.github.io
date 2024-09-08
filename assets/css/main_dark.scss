@@ -34,6 +34,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
   letter-spacing: 1px !important;
 }
+/* Scaling header sizes */
+h1 { font-size: calc(2.5em * var(--header-scale)) !important; }
+h2 { font-size: calc(2em * var(--header-scale)) !important; }
+h3 { font-size: calc(1.75em * var(--header-scale)) !important; }
+h4 { font-size: calc(1.5em * var(--header-scale)) !important; }
+h5 { font-size: calc(1.25em * var(--header-scale)) !important; }
+h6 { font-size: calc(1em * var(--header-scale)) !important; }
 
 
 .masthead,
