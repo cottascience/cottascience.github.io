@@ -1,7 +1,8 @@
 # Jekyll Theme Settings
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
+font_awesome:
+  version: "6.6.0"
 # Site Settings
 title: "ML & Causal Inference"
 subtitle: "Science & Health"
