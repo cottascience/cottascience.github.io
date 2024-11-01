@@ -13,12 +13,9 @@ I'm a postdoc fellow at [Vector Institute](https://vectorinstitute.ai/), where I
 I develop machine learning and  causal inference methods for applications in science and healthcare.
 My long-term goal is to discover new treatments for diseases with high unmet medical needs and implement intelligent health systems. To this end, my work contributes algorithms and models that can leverage diverse, complex data to discover, evaluate, deliver, and monitor therapeutic and policy interventions.
 
-# 🗞️ Recent Preprints
+# 🗞️ Recent Pre-prints
 
-- **End-To-End Causal Effect Estimation from Unstructured Natural Language Data**
-    N Dhawan, L Cotta, K Ullrich, RG Krishnan, CJ Maddison
-    arXiv, 2024 {% include my-button.html text="🌍 PAPER" url="https://arxiv.org/abs/2407.07018" %}
-- **Out-Of-Context Prompting Boosts Fairness and Robustness in Large Language Model Predictions**
+- **Test-Time Fairness and Robustness in Large Language Models**
     L Cotta, CJ Maddison
     arXiv, 2024 {% include my-button.html text="🌍 PAPER" url="https://arxiv.org/abs/2406.07685" %}
 - **Boosting the Predictive Power of Protein Representations with a Corpus of Text Annotations**
@@ -28,6 +25,10 @@ My long-term goal is to discover new treatments for diseases with high unmet med
 # 🎓 Selected Publications
 
 For full list and metrics, see [Google Scholar](https://scholar.google.com/citations?user=0GI4MyoAAAAJ&hl=pt-BR).
+
+- **End-To-End Causal Effect Estimation from Unstructured Natural Language Data**
+    N Dhawan, L Cotta, K Ullrich, RG Krishnan, CJ Maddison
+    NeurIPS, 2024 {% include my-button.html text="🌍 PAPER" url="https://arxiv.org/abs/2407.07018" %}
 
 - **Probabilistic Invariant Learning with Randomized Linear Classifiers**
     L Cotta, G Yehuda, A Schuster, CJ Maddison
