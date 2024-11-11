@@ -8,6 +8,8 @@ title: " "
 
 I'm a postdoc fellow at [Vector Institute](https://vectorinstitute.ai/), where I'm hosted by [Chris J. Maddison](https://www.cs.toronto.edu/~cmaddis/). I received my PhD degree in computer science at Purdue University, where I was advised by [Bruno Ribeiro](https://www.cs.purdue.edu/homes/ribeirob/). Before that **—**in a distant and happy land**—** I was a BSc student (also in CS) at UFMG, Brazil. During my time as an undergrad I worked with distributed algorithms (at UFMG) and quantum computing theory (at University of Calgary).
 
+[Download my CV](assets/cv.pdf)
+
 # 📝 Research
 
 I develop machine learning and  causal inference methods for applications in science and healthcare.
