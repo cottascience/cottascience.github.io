@@ -12,8 +12,8 @@ I'm a postdoc fellow at [Vector Institute](https://vectorinstitute.ai/), where I
 
 # 📝 Research
 
-I develop machine learning and  causal inference methods for applications in science and healthcare.
-My long-term goal is to discover new treatments for diseases with high unmet medical needs and implement intelligent health systems. To this end, my work contributes algorithms and models that can leverage diverse, complex data to discover, evaluate, deliver, and monitor therapeutic and policy interventions.
+I develop machine learning and  causal inference methods for high-stakes applications of AI, such as science and recommendation engines.
+My long-term goal is to deliver new AI solutions that have real, tangible world impact. It's going to be [bitter](https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf), but now is our time to build. To this end, my work contributes algorithms and models that can leverage diverse, complex data to discover, evaluate, deliver, and monitor system interventions.
 
 # 🗞️ Recent Pre-prints
 
