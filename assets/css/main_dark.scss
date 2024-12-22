@@ -1,7 +1,7 @@
 ---
 ---
 @charset "utf-8";
-$link-color:#3498DB;
+$link-color:#343739;
 @import "minimal-mistakes/skins/default"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -17,19 +17,19 @@ a:active {
 
 // New styles for white background and old HTML-like font
 body {
-    background-color: #F5F7FA !important;
+    background-color: #FAF9F6 !important;
     font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, Times, serif !important;
 }
 
 // Optional: Adjust text color for better contrast on white background
 body,
 .page__content {
-    color: #2C3E50 !important;
+    color: #343739 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif !important;
-  color: #2C3E50 !important; /* Use your desired header color here */
+  color: #343739 !important; /* Use your desired header color here */
   text-transform: uppercase !important;
   font-weight: 700 !important;
   letter-spacing: 1px !important;
@@ -53,20 +53,20 @@ h6 { font-size: calc(1em * var(--header-scale)) !important; }
 
 // Your custom styles go here
 a {
-  color: #3498DB !important;
+  color: #343739 !important;
   
   &:visited {
-    color: #3498DB !important;
+    color: #343739 !important;
   }
   
   &:hover {
-    color: #3498DB !important;
+    color: #343739 !important;
   }
 }
 
 .page__hero--overlay .btn {
   background-color: #F5F7FA;
-  color: #2C3E50;              //Text color
+  color: #343739;              //Text color
   border: none;               // Remove border
   padding: 12px 24px;         // Increase padding
   font-weight: bold;          // Bold text
@@ -74,7 +74,7 @@ a {
   transition: background-color 0.3s ease;  // Smooth color transition on hover
 
   &:hover {
-    background-color: #c7ffe7;  // Darker red on hover
+    background-color: #343739;  // Darker red on hover
   }
 }
 

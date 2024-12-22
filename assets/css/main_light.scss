@@ -1,7 +1,7 @@
 ---
 ---
 @charset "utf-8";
-$link-color: #00adb5;
+$link-color:#343739;
 @import "minimal-mistakes/skins/default"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -17,28 +17,66 @@ a:active {
 
 // New styles for white background and old HTML-like font
 body {
-    background-color: #FFE7C7 !important;
+    background-color: #FAF9F6 !important;
     font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, Times, serif !important;
 }
 
 // Optional: Adjust text color for better contrast on white background
 body,
 .page__content {
-    color: #000 !important;
+    color: #343739 !important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif !important;
+  color: #343739 !important; /* Use your desired header color here */
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+}
+/* Scaling header sizes */
+h1 { font-size: calc(2.5em * var(--header-scale)) !important; }
+h2 { font-size: calc(2em * var(--header-scale)) !important; }
+h3 { font-size: calc(1.75em * var(--header-scale)) !important; }
+h4 { font-size: calc(1.5em * var(--header-scale)) !important; }
+h5 { font-size: calc(1.25em * var(--header-scale)) !important; }
+h6 { font-size: calc(1em * var(--header-scale)) !important; }
+
 
 .masthead,
 .greedy-nav,
 .masthead__menu-item,
 .visible-links,
 .hidden-links {
-  background-color: #FFE7C7 !important;
+  background-color: #F5F7FA !important;
 }
 
-// Optional: Adjust headings if needed
-// h1, h2, h3, h4, h5, h6 {
-//     font-family: "Times New Roman", Times, serif !important;
-// }
+// Your custom styles go here
+a {
+  color: #343739 !important;
+  
+  &:visited {
+    color: #343739 !important;
+  }
+  
+  &:hover {
+    color: #343739 !important;
+  }
+}
+
+.page__hero--overlay .btn {
+  background-color: #F5F7FA;
+  color: #343739;              //Text color
+  border: none;               // Remove border
+  padding: 12px 24px;         // Increase padding
+  font-weight: bold;          // Bold text
+  text-transform: uppercase;  // All caps text
+  transition: background-color 0.3s ease;  // Smooth color transition on hover
+
+  &:hover {
+    background-color: #343739;  // Darker red on hover
+  }
+}
 
 // Adjust scaling for larger screens
 @media screen and (min-width: 1024px) {
