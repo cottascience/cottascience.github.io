@@ -1,7 +1,7 @@
 ---
 ---
 @charset "utf-8";
-$link-color:#343739;
+$link-color:#C98CA7;
 @import "minimal-mistakes/skins/default"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -53,20 +53,20 @@ h6 { font-size: calc(1em * var(--header-scale)) !important; }
 
 // Your custom styles go here
 a {
-  color: #343739 !important;
+  color: #C98CA7 !important;
   
   &:visited {
-    color: #343739 !important;
+    color: #C98CA7 !important;
   }
   
   &:hover {
-    color: #343739 !important;
+    color: #C98CA7 !important;
   }
 }
 
 .page__hero--overlay .btn {
-  background-color: #F5F7FA;
-  color: #343739;              //Text color
+  background-color: #FAF9F6;
+  color: #C98CA7;              //Text color
   border: none;               // Remove border
   padding: 12px 24px;         // Increase padding
   font-weight: bold;          // Bold text
@@ -74,7 +74,7 @@ a {
   transition: background-color 0.3s ease;  // Smooth color transition on hover
 
   &:hover {
-    background-color: #343739;  // Darker red on hover
+    background-color: #C98CA7;  // Darker red on hover
   }
 }
 
