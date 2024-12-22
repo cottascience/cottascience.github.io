@@ -18,7 +18,8 @@ a:active {
 // New styles for white background and old HTML-like font
 body {
     background-color: #FAF9F6 !important;
-    font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, Times, serif !important;
+    // font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, Times, serif !important;
+    font-family: "JetBrains Mono", monospace;
 }
 
 // Optional: Adjust text color for better contrast on white background
@@ -28,9 +29,10 @@ body,
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif !important;
+  font-family: "JetBrains Mono", monospace;
+  // font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif !important;
   color: #343739 !important; /* Use your desired header color here */
-  text-transform: uppercase !important;
+  // text-transform: uppercase !important;
   font-weight: 700 !important;
   letter-spacing: 1px !important;
 }
