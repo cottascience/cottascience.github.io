@@ -80,7 +80,7 @@ defaults:
         overlay_filter: 0.3
         actions:
           - label: "❤️  Donate to Cancer Patients in Brazil"
-            url: "https://institutomariopenna.colabore.org/sejaumdoador/single_step"
+            url: "https://vencerocancer.org.br/apoie/"
 
 category_archive:
   type: liquid
