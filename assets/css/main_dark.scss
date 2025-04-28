@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #343739 !important; /* Use your desired header color here */
   // text-transform: uppercase !important;
   font-weight: 700 !important;
-  letter-spacing: 1px !important;
+  // letter-spacing: 1px !important; /* Removed to use default spacing */
 }
 /* Scaling header sizes */
 h1 { font-size: calc(2.5em * var(--header-scale)) !important; }
