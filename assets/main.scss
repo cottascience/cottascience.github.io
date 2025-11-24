@@ -1,0 +1,48 @@
+---
+---
+
+@import "minima";
+
+/* Add your custom styles below */
+
+body {
+  font-family: 'Computer Modern', 'Latin Modern Roman', Georgia, Times, serif !important;
+  line-height: 1.6;
+  color: #343739;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 1.5em;
+  border-bottom: 1px solid #FAF9F6;
+  padding-bottom: 0.3em;
+}
+
+a {
+  color: #C98CA7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
