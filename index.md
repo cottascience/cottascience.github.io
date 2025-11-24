@@ -21,6 +21,13 @@ Big on open science, open source, and free education.
 
 If you want to build something together (research or outreach), shoot me an email. For longer term collaborations, consider applying to one of our PhD programs: [Ellison Scholarships](https://eit.org/scholars), or the [AI Fundamentals CDT](https://www.eitcdt.ox.ac.uk/). Particularly hyped about working with folks from diverse backgrounds & communities.
 
+## Email
+
+To contact me, execute:
+```bash
+printf '%3$s@%2$s.%1$s\n' org eit lcotta
+```
+
 ## Links
 
-[email](mailto:lcotta@eit.org) / [google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [twitter](https://x.com/cottascience) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
+[google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [twitter](https://x.com/cottascience) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
