@@ -6,5 +6,4 @@ url: "" # the base hostname & protocol
 # Build settings
 markdown: kramdown
 theme: minima # This is a simple, built-in theme
-plugins:
-  - jekyll-feed
+plugins: []
