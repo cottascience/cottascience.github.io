@@ -1,6 +1,7 @@
 ---
 layout: home
 ---
+
 # <img src="assets/images/profile-blog.png" style="float: right; margin-left: 20px; max-width: 200px;" alt="Profile Photo">
 
 _Research Scientist, Ellison Institute of Technology_
@@ -10,10 +11,11 @@ I'm a computer scientist building and studying AI systems for real-world impact.
 Simple systems paired with complex data and large flop counts give life to beautiful things. It's our time, so let's build for humanity's most enduring challenges.
 
 Current (general) interests:
-* generative models for discrete data;
-* causal inference;
-* uncertainty & data curation;
-* scaling laws on scientific and medical data.
+
+- generative models for discrete data;
+- causal inference;
+- uncertainty & data curation;
+- scaling laws on scientific and medical data.
 
 ## Collabs
 
@@ -21,9 +23,16 @@ Big on open science, open source, and free education.
 
 If you want to build something together (research or outreach), shoot me an email. For longer term collaborations, consider applying to one of our PhD programs: [Ellison Scholarships](https://eit.org/scholars), or the [AI Fundamentals CDT](https://www.eitcdt.ox.ac.uk/). Particularly hyped about working with folks from diverse backgrounds & communities.
 
+## Chatting with medical
+
+I dedicate two hours every Saturday afternoon to mentoring students from underrepresented groups in computer science. If you're seeking guidance on research opportunities, graduate school applications, launching coding projects, or navigating your career path, I'd be happy to connect. Please, use the link below to schedule a time.
+
+[Book a chat](https://calendar.app.google/USZEg3QtxHw3N8T69)
+
 ## Email
 
 To contact me, execute:
+
 ```bash
 printf '%3$s@%2$s.%1$s\n' org eit lcotta
 ```
