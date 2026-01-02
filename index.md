@@ -23,7 +23,7 @@ Big on open science, open source, and free education.
 
 If you want to build something together (research or outreach), shoot me an email. For longer term collaborations, consider applying to one of our PhD programs: [Ellison Scholarships](https://eit.org/scholars), or the [AI Fundamentals CDT](https://www.eitcdt.ox.ac.uk/). Particularly hyped about working with folks from diverse backgrounds & communities.
 
-## Chatting with medical
+## Chatting with me
 
 I dedicate two hours every Saturday afternoon to mentoring students from underrepresented groups in computer science. If you're seeking guidance on research opportunities, graduate school applications, launching coding projects, or navigating your career path, I'd be happy to connect. Please, use the link below to schedule a time.
 
