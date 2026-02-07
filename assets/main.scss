@@ -8,7 +8,8 @@
 body {
   font-family: 'Gentium Plus', Georgia, Times, serif !important;
   line-height: 1.6;
-  color: #343739;
+  color: #3A3F5C;
+  background-color: #F2F0EF;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -41,6 +42,10 @@ a {
   font-family: 'Gentium Plus', serif;
   color: #C98CA7;
   text-decoration: none;
+}
+
+a:visited {
+  color: #C98CA7;
 }
 
 a:hover {
