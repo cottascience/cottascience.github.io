@@ -648,7 +648,7 @@ table td {
 
 /* Add your custom styles below */
 body {
-  font-family: "Computer Modern", "Latin Modern Roman", Georgia, Times, serif !important;
+  font-family: "Gentium Plus", Georgia, Times, serif !important;
   line-height: 1.6;
   color: #343739;
   max-width: 800px;
@@ -656,8 +656,11 @@ body {
   padding: 20px;
 }
 
-h1, h2 {
-  font-family: Georgia, serif;
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.page-link {
+  font-family: "Gentium Plus", serif;
+  font-weight: 700;
 }
 
 h1 {
@@ -672,7 +675,12 @@ h2 {
   padding-bottom: 0.3em;
 }
 
+code, pre, .highlight {
+  font-family: "JetBrains Mono", monospace;
+}
+
 a {
+  font-family: "Gentium Plus", serif;
   color: #C98CA7;
   text-decoration: none;
 }

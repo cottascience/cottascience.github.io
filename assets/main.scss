@@ -14,8 +14,10 @@ body {
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.page-link {
+  font-family: 'Gentium Plus', serif;
   font-weight: 700;
 }
 
@@ -31,7 +33,12 @@ h2 {
   padding-bottom: 0.3em;
 }
 
+code, pre, .highlight {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 a {
+  font-family: 'Gentium Plus', serif;
   color: #C98CA7;
   text-decoration: none;
 }
