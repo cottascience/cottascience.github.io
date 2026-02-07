@@ -6,7 +6,7 @@
 /* Add your custom styles below */
 
 body {
-  font-family: 'Computer Modern', 'Latin Modern Roman', Georgia, Times, serif !important;
+  font-family: 'Gentium Plus', Georgia, Times, serif !important;
   line-height: 1.6;
   color: #343739;
   max-width: 800px;
@@ -14,8 +14,9 @@ body {
   padding: 20px;
 }
 
-h1, h2 {
-  font-family: Georgia, serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
 }
 
 h1 {
