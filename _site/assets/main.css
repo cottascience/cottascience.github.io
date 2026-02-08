@@ -676,10 +676,113 @@ h2 {
   padding-bottom: 0.3em;
 }
 
-code, pre, .highlight {
+/* Code blocks - warm, sophisticated palette */
+code, pre {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #E8E4E0;
+  color: #3A3F5C;
+  border: 1px solid #D4CFC9;
+  border-radius: 4px;
+}
+
+code {
+  padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 12px 16px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre > code {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.highlight {
+  background-color: #E8E4E0;
+  border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
 }
 
+.highlighter-rouge .highlight {
+  background-color: #E8E4E0;
+}
+
+/* Syntax highlighting - earthy engineering notebook aesthetic */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs {
+  color: #8B8378;
+  font-style: italic;
+} /* Comments - warm gray */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt {
+  color: #6B8E7F;
+  font-weight: 600;
+} /* Keywords - muted sage */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .s1 {
+  color: #A67C52;
+} /* Strings - warm amber */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+  color: #7A8BA6;
+} /* Numbers - dusty blue */
+.highlight .nf,
+.highlight .ne {
+  color: #B8766E;
+  font-weight: 600;
+} /* Functions - terracotta */
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .ni,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: #8B6F9C;
+} /* Names/vars - muted purple */
+.highlight .nt {
+  color: #6B8E7F;
+} /* Tags - sage */
+.highlight .o,
+.highlight .ow {
+  color: #7A8BA6;
+  font-weight: normal;
+} /* Operators - dusty blue */
+.highlight .err {
+  color: #B8766E;
+  background-color: transparent;
+} /* Errors - terracotta */
+.highlight .bp {
+  color: #8B8378;
+} /* Built-ins - warm gray */
+.highlight .sr,
+.highlight .ss {
+  color: #A67C52;
+} /* Regex/symbols - amber */
 a {
   font-family: "Gentium Plus", serif;
   color: #C98CA7;
