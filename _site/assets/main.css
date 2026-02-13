@@ -677,9 +677,9 @@ h2 {
 /* Code blocks - warm, sophisticated palette */
 code, pre {
   font-family: "JetBrains Mono", monospace;
-  background-color: #E8E4E0;
+  background-color: #FAF8F6;
   color: #3A3F5C;
-  border: 1px solid #D4CFC9;
+  border: 1px solid #FAF8F6;
   border-radius: 4px;
 }
 
@@ -701,13 +701,13 @@ pre > code {
 }
 
 .highlight {
-  background-color: #E8E4E0;
+  background-color: #FAF8F6;
   border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #E8E4E0;
+  background-color: #FAF8F6;
 }
 
 /* Syntax highlighting - earthy engineering notebook aesthetic */

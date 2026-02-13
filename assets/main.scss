@@ -32,12 +32,12 @@ h2 {
   margin-top: 1.5em;
 }
 
-/* Code blocks - warm, sophisticated palette */
+/* Code blocks - Catppuccin Latte */
 code, pre {
   font-family: 'JetBrains Mono', monospace;
-  background-color: #E8E4E0;
-  color: #3A3F5C;
-  border: 1px solid #D4CFC9;
+  background-color: #EFF1F5;
+  color: #4C4F69;
+  border: 1px solid #E6E9EF;
   border-radius: 4px;
 }
 
@@ -59,27 +59,29 @@ pre > code {
 }
 
 .highlight {
-  background-color: #E8E4E0;
+  background-color: #EFF1F5;
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #E8E4E0;
+  background-color: #EFF1F5;
 }
 
-/* Syntax highlighting - earthy engineering notebook aesthetic */
+/* Syntax highlighting - Catppuccin Latte */
 .highlight .c,
 .highlight .cm,
 .highlight .c1,
-.highlight .cs { color: #8B8378; font-style: italic; }  /* Comments - warm gray */
+.highlight .cs { color: #9CA0B0; font-style: italic; }  /* Overlay0 */
 
 .highlight .k,
-.highlight .kc,
 .highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt { color: #6B8E7F; font-weight: 600; }  /* Keywords - muted sage */
+.highlight .kr { color: #8839EF; font-weight: 600; }  /* Mauve */
+
+.highlight .kc,
+.highlight .kp { color: #FE640B; }  /* Peach */
+
+.highlight .kt { color: #DF8E1D; }  /* Yellow */
 
 .highlight .s,
 .highlight .sb,
@@ -90,38 +92,52 @@ pre > code {
 .highlight .sh,
 .highlight .si,
 .highlight .sx,
-.highlight .s1 { color: #A67C52; }  /* Strings - warm amber */
+.highlight .s1 { color: #40A02B; }  /* Green */
 
 .highlight .m,
 .highlight .mf,
 .highlight .mh,
 .highlight .mi,
-.highlight .mo { color: #7A8BA6; }  /* Numbers - dusty blue */
+.highlight .mo { color: #FE640B; }  /* Peach */
 
 .highlight .nf,
-.highlight .ne { color: #B8766E; font-weight: 600; }  /* Functions - terracotta */
+.highlight .ne { color: #1E66F5; font-weight: 600; }  /* Blue */
 
-.highlight .na,
-.highlight .nb,
-.highlight .nc,
-.highlight .no,
-.highlight .ni,
+.highlight .na { color: #DF8E1D; }  /* Yellow */
+
+.highlight .nb { color: #FE640B; }  /* Peach */
+
+.highlight .nc { color: #DF8E1D; font-weight: 600; }  /* Yellow */
+
+.highlight .no { color: #DF8E1D; }  /* Yellow */
+
+.highlight .ni { color: #8839EF; }  /* Mauve */
+
 .highlight .nv,
 .highlight .vc,
 .highlight .vg,
-.highlight .vi { color: #8B6F9C; }  /* Names/vars - muted purple */
+.highlight .vi { color: #4C4F69; }  /* Text */
 
-.highlight .nt { color: #6B8E7F; }  /* Tags - sage */
+.highlight .nt { color: #8839EF; }  /* Mauve */
 
 .highlight .o,
-.highlight .ow { color: #7A8BA6; font-weight: normal; }  /* Operators - dusty blue */
+.highlight .ow { color: #04A5E5; }  /* Sky */
 
-.highlight .err { color: #B8766E; background-color: transparent; }  /* Errors - terracotta */
+.highlight .err { color: #D20F39; background-color: transparent; }  /* Red */
 
-.highlight .bp { color: #8B8378; }  /* Built-ins - warm gray */
+.highlight .bp { color: #FE640B; }  /* Peach */
 
-.highlight .sr,
-.highlight .ss { color: #A67C52; }  /* Regex/symbols - amber */
+.highlight .sr { color: #EA76CB; }  /* Pink */
+
+.highlight .ss { color: #D20F39; }  /* Red */
+
+.highlight .p { color: #4C4F69; }  /* Text */
+
+.highlight .nn { color: #1E66F5; }  /* Blue */
+
+.highlight .nx { color: #1E66F5; }  /* Blue */
+
+.highlight .dl { color: #40A02B; }  /* Green */
 
 a {
   font-family: 'Gentium Plus', serif;
