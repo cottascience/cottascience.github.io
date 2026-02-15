@@ -674,12 +674,12 @@ h2 {
   margin-top: 1.5em;
 }
 
-/* Code blocks - warm, sophisticated palette */
+/* Code blocks - PaperColor Light */
 code, pre {
   font-family: "JetBrains Mono", monospace;
-  background-color: #FAF8F6;
-  color: #3A3F5C;
-  border: 1px solid #FAF8F6;
+  background-color: #EEEEEE;
+  color: #444444;
+  border: 1px solid #D0D0D0;
   border-radius: 4px;
 }
 
@@ -701,32 +701,40 @@ pre > code {
 }
 
 .highlight {
-  background-color: #FAF8F6;
+  background-color: #EEEEEE;
   border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #FAF8F6;
+  background-color: #EEEEEE;
 }
 
-/* Syntax highlighting - earthy engineering notebook aesthetic */
+/* Syntax highlighting - PaperColor Light */
 .highlight .c,
 .highlight .cm,
 .highlight .c1,
 .highlight .cs {
-  color: #8B8378;
+  color: #878787;
   font-style: italic;
-} /* Comments - warm gray */
+}
+
 .highlight .k,
-.highlight .kc,
 .highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt {
-  color: #6B8E7F;
+.highlight .kr {
+  color: #af0000;
   font-weight: 600;
-} /* Keywords - muted sage */
+}
+
+.highlight .kc,
+.highlight .kp {
+  color: #008700;
+}
+
+.highlight .kt {
+  color: #d70087;
+}
+
 .highlight .s,
 .highlight .sb,
 .highlight .sc,
@@ -737,50 +745,93 @@ pre > code {
 .highlight .si,
 .highlight .sx,
 .highlight .s1 {
-  color: #A67C52;
-} /* Strings - warm amber */
+  color: #5f8700;
+}
+
 .highlight .m,
 .highlight .mf,
 .highlight .mh,
 .highlight .mi,
 .highlight .mo {
-  color: #7A8BA6;
-} /* Numbers - dusty blue */
+  color: #d75f00;
+}
+
 .highlight .nf,
 .highlight .ne {
-  color: #B8766E;
+  color: #005f87;
   font-weight: 600;
-} /* Functions - terracotta */
-.highlight .na,
-.highlight .nb,
-.highlight .nc,
-.highlight .no,
-.highlight .ni,
+}
+
+.highlight .na {
+  color: #d75f00;
+}
+
+.highlight .nb {
+  color: #d70087;
+}
+
+.highlight .nc {
+  color: #d70087;
+  font-weight: 600;
+}
+
+.highlight .no {
+  color: #d75f00;
+}
+
+.highlight .ni {
+  color: #af0000;
+}
+
 .highlight .nv,
 .highlight .vc,
 .highlight .vg,
 .highlight .vi {
-  color: #8B6F9C;
-} /* Names/vars - muted purple */
+  color: #444444;
+}
+
 .highlight .nt {
-  color: #6B8E7F;
-} /* Tags - sage */
+  color: #af0000;
+}
+
 .highlight .o,
 .highlight .ow {
-  color: #7A8BA6;
-  font-weight: normal;
-} /* Operators - dusty blue */
+  color: #005f87;
+}
+
 .highlight .err {
-  color: #B8766E;
+  color: #af0000;
   background-color: transparent;
-} /* Errors - terracotta */
+}
+
 .highlight .bp {
-  color: #8B8378;
-} /* Built-ins - warm gray */
-.highlight .sr,
+  color: #d75f00;
+}
+
+.highlight .sr {
+  color: #d70087;
+}
+
 .highlight .ss {
-  color: #A67C52;
-} /* Regex/symbols - amber */
+  color: #af0000;
+}
+
+.highlight .p {
+  color: #444444;
+}
+
+.highlight .nn {
+  color: #005f87;
+}
+
+.highlight .nx {
+  color: #005f87;
+}
+
+.highlight .dl {
+  color: #5f8700;
+}
+
 a {
   font-family: "Gentium Plus", serif;
   color: #C98CA7;
