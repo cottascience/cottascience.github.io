@@ -9,6 +9,16 @@ layout: default
   {{ content }}
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/cotta"
+      method="post"
+      class="embeddable-buttondown-form"
+      referrerpolicy="unsafe-url"
+    >
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" />
+      <input type="submit" value="Subscribe" style="font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Courier New', monospace;" />
+    </form>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
