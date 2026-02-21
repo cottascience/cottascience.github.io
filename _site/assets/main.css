@@ -858,4 +858,11 @@ li {
   display: none;
 }
 
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background-color: #FFF9F5;
+    border: 1px solid #e8d8ce;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
