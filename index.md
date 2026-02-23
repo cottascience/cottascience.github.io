@@ -4,7 +4,7 @@ layout: home
 
 # <img src="assets/images/profile-blog.png" style="float: right; margin-left: 20px; max-width: 200px;" alt="Profile Photo">
 
-#### _Research Scientist, Ellison Institute of Technology_
+#### Research Scientist, Ellison Institute of Technology
 
 I'm a computer scientist building and studying AI systems for real-world impact. Mostly focused on medicine and the life sciences.
 
