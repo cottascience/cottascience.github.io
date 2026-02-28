@@ -2,13 +2,13 @@
 layout: home
 ---
 
-# <img src="assets/images/profile-blog.png" style="float: right; margin-left: 20px; max-width: 200px;" alt="Profile Photo">
+# <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 
-#### Research Scientist, Ellison Institute of Technology
+#### Research Scientist, Ellison Institute of Technology (AI and Robotics)
 
 I'm a computer scientist building and studying AI systems for real-world impact. Mostly focused on medicine and the life sciences.
 
-Simple systems paired with complex data and large flop counts give life to beautiful things.
+Simple systems paired with complex data and large flop counts give life to beautiful, complex things.
 
 Current (general) interests:
 

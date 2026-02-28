@@ -647,10 +647,14 @@ table td {
 }
 
 /* Add your custom styles below */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lora", Georgia, Times, serif !important;
   line-height: 1.6;
-  color: #3A3F5C;
+  color: #2D3250;
   background-color: #FFF9F5;
   max-width: 800px;
   margin: 0 auto;
@@ -677,9 +681,9 @@ h2 {
 /* Code blocks - PaperColor Light */
 code, pre {
   font-family: "JetBrains Mono", monospace;
-  background-color: #EEEEEE;
+  background-color: #F0EDE8;
   color: #444444;
-  border: 1px solid #D0D0D0;
+  border: 1px solid #D8D2C8;
   border-radius: 4px;
 }
 
@@ -701,13 +705,13 @@ pre > code {
 }
 
 .highlight {
-  background-color: #EEEEEE;
+  background-color: #F0EDE8;
   border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #EEEEEE;
+  background-color: #F0EDE8;
 }
 
 /* Syntax highlighting - PaperColor Light */
@@ -834,16 +838,21 @@ pre > code {
 
 a {
   font-family: "Lora", serif;
-  color: #955B72;
+  color: #8B4A62;
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease, color 0.2s ease;
 }
 
 a:visited {
-  color: #955B72;
+  color: #8B4A62;
 }
 
 a:hover {
-  text-decoration: underline;
+  background-size: 100% 1px;
 }
 
 ul {
@@ -854,8 +863,48 @@ li {
   margin-bottom: 0.5em;
 }
 
+.post-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8em;
+  color: #7A7F9C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-photo {
+  float: right;
+  margin-left: 20px;
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .rss-subscribe {
   display: none;
+}
+
+.site-header {
+  border-top: none;
+  border-bottom-color: #D8D2C8;
+}
+
+.site-nav .page-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1.5px solid #2D3250;
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: #2D3250;
+  background-image: none;
+  transition: background-color 0.25s ease, color 0.2s ease;
+}
+.site-nav .page-link:hover {
+  background-color: #8B4A62;
+  color: #FFF9F5;
+  background-image: none;
 }
 
 @media screen and (max-width: 600px) {
