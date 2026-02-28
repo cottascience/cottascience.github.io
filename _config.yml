@@ -5,5 +5,7 @@ url: "" # the base hostname & protocol
 
 # Build settings
 markdown: kramdown
-theme: minima # This is a simple, built-in theme
+theme: minima
+header_pages:
+  - good-stuff.md
 plugins: []
