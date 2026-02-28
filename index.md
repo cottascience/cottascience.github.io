@@ -4,7 +4,7 @@ layout: home
 
 # <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 
-#### Research Scientist, Ellison Institute of Technology (AI and Robotics)
+#### Research Scientist, Ellison Institute of Technology
 
 I'm a computer scientist building and studying AI systems for real-world impact. Mostly focused on medicine and the life sciences.
 
@@ -36,6 +36,12 @@ To contact me, execute:
 ```bash
 printf '%3$s@%2$s.%1$s\n' org eit lcotta
 ```
+
+I'm bad at email, but I do read everything. You'll have better luck if you
+
+- have something specific in mind;
+- wrote it yourself (yes, I can tell);
+- aren't recruiting me for finance or your garage AGI startup.
 
 ### Links
 

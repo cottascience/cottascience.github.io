@@ -646,7 +646,6 @@ table td {
   color: #099;
 }
 
-/* Add your custom styles below */
 html {
   scroll-behavior: smooth;
 }
@@ -662,8 +661,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
-.site-title,
-.page-link {
+.site-title {
   font-family: "Merriweather", serif;
   font-weight: 900;
 }
