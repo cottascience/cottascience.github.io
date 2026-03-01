@@ -41,7 +41,7 @@ I'm bad at email, but I do read everything. You'll have better luck if you
 
 - have something specific in mind;
 - wrote it yourself (yes, I can tell);
-- aren't recruiting me for finance or your garage AGI startup.
+- aren't recruiting me for finance.
 
 ### Links
 
