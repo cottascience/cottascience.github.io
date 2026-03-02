@@ -37,7 +37,7 @@ To contact me, execute:
 printf '%3$s@%2$s.%1$s\n' org eit lcotta
 ```
 
-I'm bad at email, but I do read everything. I'll eventually get back to you, trust me ;)
+I'm bad at email, but I do read everything. Unless you're recruiting me for finance, I'll eventually get back to you, trust me ;)
 
 ### Links
 
