@@ -4,11 +4,11 @@ layout: home
 
 # <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 
-#### Research Scientist, Ellison Institute of Technology
+#### _AI & Robotics, Ellison Institute of Technology_
 
-I'm a computer scientist building and studying AI systems for real-world impact. Mostly focused on medicine and the life sciences.
+I'm a computer scientist making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
 
-Simple systems paired with complex data and large flop counts give life to beautiful, complex things.
+Simple systems paired with complex data and large flop counts give life to useful, cool things.
 
 Current (general) interests:
 
