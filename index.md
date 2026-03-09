@@ -4,7 +4,7 @@ layout: home
 
 # <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 
-I'm a computer scientist making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
+I'm a computer scientist (now @[EIT](https://eit.org/)) making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
 
 Simple systems paired with large flop counts give life to complex, useful things.
 
