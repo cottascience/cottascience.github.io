@@ -4,8 +4,6 @@ layout: home
 
 # <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 
-#### _AI & Robotics, Ellison Institute of Technology_
-
 I'm a computer scientist making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
 
 Simple systems paired with large flop counts give life to complex, useful things.
