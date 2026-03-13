@@ -2,7 +2,8 @@
 layout: home
 ---
 
-# <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
+<div class="intro">
+<div class="intro-text" markdown="1">
 
 I'm a computer scientist (now @[EIT](https://eit.org/)) making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
 
@@ -14,6 +15,10 @@ Current (general) interests:
 - causal inference;
 - uncertainty & data curation;
 - scaling laws on scientific and medical data.
+
+</div>
+<img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
+</div>
 
 ### Collabs
 
