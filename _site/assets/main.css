@@ -690,12 +690,12 @@ h2 {
   margin-top: 1.5em;
 }
 
-/* Code blocks - PaperColor Light */
+/* Code blocks - GitHub Light */
 code, pre {
   font-family: "JetBrains Mono", monospace;
-  background-color: #F0EDE8;
-  color: #444444;
-  border: 1px solid #D8D2C8;
+  background-color: #f6f8fa;
+  color: #1f2328;
+  border: 1px solid #d1d9e0;
   border-radius: 4px;
 }
 
@@ -717,38 +717,38 @@ pre > code {
 }
 
 .highlight {
-  background-color: #F0EDE8;
+  background-color: #f6f8fa;
   border-radius: 4px;
   font-family: "JetBrains Mono", monospace;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #F0EDE8;
+  background-color: #f6f8fa;
 }
 
-/* Syntax highlighting - PaperColor Light */
+/* Syntax highlighting - GitHub Light */
 .highlight .c,
 .highlight .cm,
 .highlight .c1,
 .highlight .cs {
-  color: #878787;
+  color: #59636e;
   font-style: italic;
 }
 
 .highlight .k,
 .highlight .kd,
 .highlight .kr {
-  color: #af0000;
+  color: #cf222e;
   font-weight: 600;
 }
 
 .highlight .kc,
 .highlight .kp {
-  color: #008700;
+  color: #0550ae;
 }
 
 .highlight .kt {
-  color: #d70087;
+  color: #8250df;
 }
 
 .highlight .s,
@@ -761,7 +761,7 @@ pre > code {
 .highlight .si,
 .highlight .sx,
 .highlight .s1 {
-  color: #5f8700;
+  color: #0a3069;
 }
 
 .highlight .m,
@@ -769,83 +769,83 @@ pre > code {
 .highlight .mh,
 .highlight .mi,
 .highlight .mo {
-  color: #d75f00;
+  color: #0550ae;
 }
 
 .highlight .nf,
 .highlight .ne {
-  color: #005f87;
+  color: #8250df;
   font-weight: 600;
 }
 
 .highlight .na {
-  color: #d75f00;
+  color: #953800;
 }
 
 .highlight .nb {
-  color: #d70087;
+  color: #6639ba;
 }
 
 .highlight .nc {
-  color: #d70087;
+  color: #6639ba;
   font-weight: 600;
 }
 
 .highlight .no {
-  color: #d75f00;
+  color: #0550ae;
 }
 
 .highlight .ni {
-  color: #af0000;
+  color: #cf222e;
 }
 
 .highlight .nv,
 .highlight .vc,
 .highlight .vg,
 .highlight .vi {
-  color: #444444;
+  color: #24292f;
 }
 
 .highlight .nt {
-  color: #af0000;
+  color: #116329;
 }
 
 .highlight .o,
 .highlight .ow {
-  color: #005f87;
+  color: #cf222e;
 }
 
 .highlight .err {
-  color: #af0000;
+  color: #82071e;
   background-color: transparent;
 }
 
 .highlight .bp {
-  color: #d75f00;
+  color: #0550ae;
 }
 
 .highlight .sr {
-  color: #d70087;
+  color: #0a3069;
 }
 
 .highlight .ss {
-  color: #af0000;
+  color: #cf222e;
 }
 
 .highlight .p {
-  color: #444444;
+  color: #1f2328;
 }
 
 .highlight .nn {
-  color: #005f87;
+  color: #0550ae;
 }
 
 .highlight .nx {
-  color: #005f87;
+  color: #0550ae;
 }
 
 .highlight .dl {
-  color: #5f8700;
+  color: #0a3069;
 }
 
 a {
