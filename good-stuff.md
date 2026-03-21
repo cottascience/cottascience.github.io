@@ -12,7 +12,7 @@ permalink: /good-stuff/
 - ["Non-uniform random variate generation" by Luc Devroye](https://luc.devroye.org/rnbookindex.html)
 - [Kantas notes on sequential Monte Carlo](https://www.ma.imperial.ac.uk/~nkantas/notes4ltcc.pdf)
 - [A course on generative modeling by John Thickstun](https://courses.cs.washington.edu/courses/cse599i/20au/)
-- [The only thing you need to read on RL by the great Kevin Murphy](https://arxiv.org/pdf/2412.05265)-
+- [The only thing you need to read on RL by the great Kevin Murphy](https://arxiv.org/pdf/2412.05265)
 - ["Almost none of the theory of stochastic processes" by Shalizi & Kontorovich](https://www.stat.cmu.edu/~cshalizi/almost-none/v0.1.1/almost-none.pdf)
 - [The best intro to Markov Chains by my all-time favorite Pierre Brémaud](https://www.di.ens.fr/~bouillard/SAA/markov.pdf)
 - ["Graph theory and additive combinatorics" by Yufei Zhao](https://yufeizhao.com/gtacbook/)
