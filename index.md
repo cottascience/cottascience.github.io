@@ -32,6 +32,10 @@ I dedicate two hours every Saturday afternoon to mentoring students from underre
 
 [Book a chat](https://calendar.app.google/USZEg3QtxHw3N8T69)
 
+### Anon feedback
+
+You can submit anonymous feedback to me [here](https://www.admonymous.co/leonardo-cotta).
+
 ### Email
 
 To contact me, execute:

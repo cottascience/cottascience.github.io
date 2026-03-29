@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "WebFetch(domain:simonwillison.net)",
+      "Bash(gem list:*)",
+      "Bash(bundle info:*)",
+      "Bash(fd:*)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(file:*)",
+      "Bash(bundle show:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
