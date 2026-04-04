@@ -48,4 +48,4 @@ I'm bad at email, but I do read everything. Unless you're recruiting me for fina
 
 ### Links
 
-[google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [twitter](https://x.com/cottascience) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
+[google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
