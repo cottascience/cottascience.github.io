@@ -900,6 +900,11 @@ li {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
+.mail-photo {
+  max-width: 33%;
+  height: auto;
+}
+
 @media screen and (max-width: 600px) {
   .intro {
     flex-direction: column-reverse;

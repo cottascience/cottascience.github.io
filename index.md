@@ -38,11 +38,7 @@ You can submit anonymous feedback to me [here](https://www.admonymous.co/leonard
 
 ### Email
 
-To contact me, execute:
-
-```bash
-printf '%3$s@%2$s.%1$s\n' org eit lcotta
-```
+<img src="assets/images/eit-mail.png" class="mail-photo" alt="Mail Photo">
 
 I'm bad at email, but I do read everything. Unless you're recruiting me for finance, I'll eventually get back to you, trust me ;)
 
