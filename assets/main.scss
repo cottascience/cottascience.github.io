@@ -207,6 +207,13 @@ li {
 .mail-photo {
   max-width: 33%;
   height: auto;
+  padding: 6px;
+  background-color: #FFF9F5;
+}
+
+.page-content img:not(.profile-photo) {
+  border: 1.5px solid #2D3250;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 600px) {
