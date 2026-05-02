@@ -38,7 +38,7 @@ You can submit anonymous feedback to me [here](https://www.admonymous.co/leonard
 
 ### Email
 
-<img src="assets/images/eit-mail.png" class="mail-photo" alt="Mail Photo">
+<img src="assets/images/gmail.png" class="mail-photo" alt="Mail Photo">
 
 I'm bad at email, but I do read everything. Unless you're recruiting me for finance, I'll eventually get back to you, trust me ;)
 
