@@ -13,8 +13,8 @@ Current (general) interests:
 
 - generative models for discrete data;
 - causal inference;
-- uncertainty & data curation;
-- scaling laws on scientific and medical data.
+- model & data curation/mixing recipes;
+- scaling laws.
 
 </div>
 <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
@@ -24,7 +24,7 @@ Current (general) interests:
 
 Big on open science, open source, and free education.
 
-If you want to build something together (research or outreach), shoot me an email. For longer term collaborations, consider applying to one of our PhD programs: [Ellison Scholarships](https://eit.org/scholars), or the [AI Fundamentals CDT](https://www.eitcdt.ox.ac.uk/). Particularly hyped about working with folks from diverse backgrounds & communities.
+If you want to build something together (research or outreach), shoot me an email. For longer term collaborations, consider applying to one of our PhD programs: [Ellison Scholarships](https://eit.org/scholars), or the [Fundamentals of AI CDT](https://www.eitcdt.ox.ac.uk/). Particularly hyped about working with folks from diverse backgrounds & communities.
 
 ### Chatting with me
 
