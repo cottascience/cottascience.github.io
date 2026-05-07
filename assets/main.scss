@@ -12,11 +12,29 @@ html {
 body {
   font-family: 'Lora', Georgia, Times, serif !important;
   line-height: 1.6;
-  color: #2D3250;
+  color: #2A2620;
   background-color: #FFF9F5;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
+}
+
+@media (min-width: 1180px) {
+  body {
+    margin: 0 auto 0 max(40px, calc(50% - 520px));
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16  0 0 0 0 0.15  0 0 0 0 0.13  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  z-index: 9999;
 }
 
 @keyframes fadeIn {
@@ -30,18 +48,27 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 .site-title {
-  font-family: 'Merriweather', serif;
-  font-weight: 900;
+  font-family: 'Fraunces', 'Merriweather', serif;
+  font-weight: 500;
+  font-variation-settings: "opsz" 96;
+  letter-spacing: -0.005em;
 }
 
 h1 {
   font-size: 2.5em;
   margin-bottom: 0.5em;
+  font-variation-settings: "opsz" 144;
 }
 
 h2 {
   font-size: 1.8em;
   margin-top: 1.5em;
+  font-variation-settings: "opsz" 120;
+}
+
+.thin {
+  font-weight: 300;
+  font-style: italic;
 }
 
 
@@ -154,7 +181,7 @@ pre > code {
 
 a {
   font-family: 'Lora', serif;
-  color: #8B4A62;
+  color: #B5563A;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
@@ -164,7 +191,7 @@ a {
 }
 
 a:visited {
-  color: #8B4A62;
+  color: #B5563A;
 }
 
 a:hover {
@@ -212,7 +239,7 @@ li {
 }
 
 .page-content img:not(.profile-photo) {
-  border: 1.5px solid #2D3250;
+  border: 1.5px solid #2A2620;
   border-radius: 3px;
 }
 
@@ -233,7 +260,7 @@ li {
 
 .site-header {
   border-top: none;
-  border-bottom: 1.5px solid #2D3250;
+  border-bottom: 1.5px solid #2A2620;
 }
 
 .site-nav .page-link {
@@ -242,19 +269,19 @@ li {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 1.5px solid #2D3250;
+  border: 1.5px solid #2A2620;
   padding: 4px 10px;
   border-radius: 3px;
-  color: #2D3250;
+  color: #2A2620;
   background-image: none;
   transition: background-color 0.25s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    background-color: #8B4A62;
+    background-color: #B5563A;
     color: #FFF9F5;
     background-image: none;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(45, 50, 80, 0.12);
+    box-shadow: 0 4px 8px rgba(42, 38, 32, 0.12);
   }
 }
 
@@ -282,13 +309,13 @@ li {
      {: .note } */
 .note, .tip, .warn, .aside,
 blockquote.note, blockquote.tip, blockquote.warn, blockquote.aside {
-  border: 1.5px solid #2D3250;
+  border: 1.5px solid #2A2620;
   border-radius: 3px;
   padding: 0.85em 1.1em 0.95em;
   margin: 1.4em 0;
   font-style: normal;
   letter-spacing: normal;
-  color: #2D3250;
+  color: #2A2620;
 
   &::before {
     display: block;
@@ -314,8 +341,8 @@ blockquote.note, blockquote.tip, blockquote.warn, blockquote.aside {
 .warn,  blockquote.warn  { background-color: rgba(181, 86, 58, 0.07); }
 .warn::before,  blockquote.warn::before  { content: "warn";  color: #B5563A; }
 
-.aside, blockquote.aside { background-color: rgba(45, 50, 80, 0.05); font-style: italic; }
-.aside::before, blockquote.aside::before { content: "aside"; color: #2D3250; }
+.aside, blockquote.aside { background-color: rgba(42, 38, 32, 0.05); font-style: italic; }
+.aside::before, blockquote.aside::before { content: "aside"; color: #2A2620; }
 
 /* Add .plain to suppress the label, e.g. {: .note .plain } */
 .note.plain::before, .tip.plain::before, .warn.plain::before, .aside.plain::before,
