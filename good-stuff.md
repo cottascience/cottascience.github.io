@@ -4,6 +4,9 @@ title: Good Stuff
 permalink: /good-stuff/
 ---
 
+> _“You're the ruler of the universe. Try to show a little taste!”_ - Ed Wood
+{: .note .plain }
+
 ### Lecture notes (or free books)
 
 - [John Duchi's stats notes](https://web.stanford.edu/class/ee377/lecture-notes.pdf)
