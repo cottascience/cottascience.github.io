@@ -720,7 +720,7 @@ h2 {
 .home > h3 {
   margin-top: 2.4em;
   padding-top: 1.4em;
-  border-top: 1px solid rgba(42, 38, 32, 0.2);
+  border-top: 1px solid rgba(42, 38, 32, 0.35);
 }
 
 /* Code blocks - GitHub Light */
@@ -949,7 +949,7 @@ li {
 }
 
 .page-content img:not(.profile-photo) {
-  border: 1px solid rgba(42, 38, 32, 0.35);
+  border: 1px solid #2A2620;
   border-radius: 3px;
 }
 
@@ -977,7 +977,7 @@ li {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 1px solid rgba(42, 38, 32, 0.35);
+  border: 1px solid #2A2620;
   padding: 4px 10px;
   border-radius: 3px;
   color: #2A2620;
@@ -995,7 +995,7 @@ li {
 @media screen and (max-width: 600px) {
   .site-nav {
     background-color: #FFF9F5;
-    border: 1px solid #e8d8ce;
+    border: 1px solid #2A2620;
   }
 }
 @media (prefers-reduced-motion: reduce) {

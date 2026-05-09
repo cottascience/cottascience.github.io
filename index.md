@@ -40,7 +40,7 @@ You can submit anonymous feedback to me [here](https://www.admonymous.co/leonard
 
 <img src="assets/images/gmail.png" class="mail-photo" alt="Mail Photo">
 
-I'm bad at email, but I do read everything. Unless you're recruiting me for finance, I'll eventually get back to you, trust me ;)
+I'm bad at email, but I do read everything. Unless you're trying to recruit me for finance, I'll eventually get back to you, trust me ;)
 
 ### Links
 
