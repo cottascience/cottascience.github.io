@@ -1,11 +1,32 @@
 title: Leonardo Cotta
-description:
-baseurl: "" # the subpath of your site
-url: "" # the base hostname & protocol
+description: Personal site of Leonardo Cotta — AI for medicine and the life sciences.
+baseurl: ""
+url: "https://cottascience.github.io"
 
-# Build settings
 markdown: kramdown
 theme: minima
 header_pages:
   - good-stuff.md
-plugins: []
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-og-image
+
+og_image:
+  output_dir: "assets/images/og"
+  force: false
+  verbose: true
+  canvas:
+    background_color: "#FFF9F5"
+  header:
+    font_family: "Fraunces, SemiBold"
+    color: "#2A2620"
+  content:
+    font_family: "Fraunces, Regular"
+    color: "#5A5F7A"
+  border_bottom:
+    width: 12
+    fill:
+      - "#B5563A"
+  domain: "cottascience.github.io"
