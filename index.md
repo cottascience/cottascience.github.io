@@ -17,7 +17,7 @@ Current (general) interests:
 - scaling laws.
 
 </div>
-<img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
+<img src="assets/images/hd-pic.png" class="profile-photo" alt="Profile Photo">
 </div>
 
 ### Collabs
