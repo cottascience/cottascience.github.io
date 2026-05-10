@@ -1186,6 +1186,71 @@ blockquote.warn.plain::before, blockquote.aside.plain::before {
   border: 0;
 }
 
+/* Tufte-style sidenotes. Use via <label for="sn-x" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-x" class="margin-toggle"/><span class="sidenote">...</span>
+ */
+.post-content,
+.page-content > .home {
+  counter-reset: sidenote-counter;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+  cursor: pointer;
+}
+
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  color: #B5563A;
+  margin-left: 1px;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -260px;
+  width: 220px;
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: #5A5F7A;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote::before {
+  content: counter(sidenote-counter) " ";
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8em;
+  color: #B5563A;
+  margin-right: 0.3em;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 1180px) {
+  .sidenote {
+    display: none;
+  }
+  .sidenote-number {
+    display: inline;
+  }
+  .margin-toggle:checked + .sidenote {
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    max-width: 100%;
+    margin: 0.8em 0;
+    padding: 0.4em 0 0.4em 1em;
+    border-left: 2px solid rgba(42, 38, 32, 0.4);
+  }
+}
 /* Figure with italic caption.
    Usage in markdown:
      <figure class="fig">
