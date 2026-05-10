@@ -366,6 +366,29 @@ blockquote.note, blockquote.tip, blockquote.warn, blockquote.aside {
 blockquote.note.plain::before, blockquote.tip.plain::before,
 blockquote.warn.plain::before, blockquote.aside.plain::before { content: none; }
 
+/* Tagline shown next to the site title in the header. */
+.site-header .wrapper { position: relative; }
+
+.site-tagline {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Fraunces', 'Merriweather', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "opsz" 144;
+  font-size: 1.05em;
+  letter-spacing: -0.005em;
+  color: rgba(42, 38, 32, 0.65);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 900px) {
+  .site-tagline { display: none; }
+}
+
 /* Figure with italic caption.
    Usage in markdown:
      {% include figure.html src="/assets/images/x.png" alt="alt text" caption="caption text" %} */
