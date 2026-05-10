@@ -5,7 +5,7 @@ layout: home
 <div class="intro">
 <div class="intro-text" markdown="1">
 
-I'm a computer scientist (now @[EIT](https://eit.org/)) making and studying AI systems with real-world impact. Mostly focused on medicine and the life sciences.
+I'm a computer scientist (now @[EIT](https://eit.org/)) making and studying AI systems with real-world impact. Mostly focused on building for medicine and the life sciences.
 
 Simple systems paired with large flop counts give life to complex, useful things.
 
