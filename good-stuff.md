@@ -4,7 +4,7 @@ title: Good Stuff
 permalink: /good-stuff/
 ---
 
-> _“You're the ruler of the universe. Try to show a little taste!”_ - Ed Wood
+> _“you're the ruler of the universe; try to show a little taste;”_
 {: .note .plain }
 
 ### Lecture notes (or free books)

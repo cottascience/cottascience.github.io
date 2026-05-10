@@ -16,6 +16,9 @@ Current (general) interests:
 - model & data curation/mixing recipes;
 - scaling laws.
 
+> _the details are not the details;_
+{: .note .plain }
+
 </div>
 <img src="assets/images/profile-blog.png" class="profile-photo" alt="Profile Photo">
 </div>
