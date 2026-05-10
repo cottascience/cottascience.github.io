@@ -42,6 +42,25 @@ You can submit anonymous feedback to me [here](https://www.admonymous.co/leonard
 
 I'm bad at email, but I do read everything. Unless you're trying to recruit me for finance, I'll eventually get back to you, trust me ;)
 
+
 ### Links
 
 [google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
+### Newsletter
+
+<div class="subscribe">
+  <p class="subscribe-blurb">Occasional reflections about life, research I'm enjoying, and some odd ideas.</p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/cotta"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/cotta', 'popupwindow')"
+    class="subscribe-form embeddable-buttondown-form"
+    referrerpolicy="unsafe-url"
+  >
+    <label class="visually-hidden" for="bd-email">Your email address</label>
+    <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
