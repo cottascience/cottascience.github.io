@@ -40,12 +40,12 @@ You can submit anonymous feedback to me [here](https://www.admonymous.co/leonard
 
 <img src="assets/images/gmail.png" class="mail-photo" alt="Mail Photo">
 
-I'm bad at email, but I do read everything. Unless you're trying to recruit me for finance, I'll eventually get back to you, trust me ;)
-
+I'm bad at email, but I do read everything. I'll eventually get back to you, trust me ;)
 
 ### Links
 
 [google scholar](https://scholar.google.co.uk/citations?user=0GI4MyoAAAAJ&hl=en) / [linkedin](https://linkedin.com/in/cotta) / [bluesky](https://bsky.app/profile/cottascience.bsky.social) / [github](https://github.com/cottascience)
+
 ### Newsletter
 
 <div class="subscribe">
@@ -63,4 +63,3 @@ I'm bad at email, but I do read everything. Unless you're trying to recruit me f
     <button type="submit">Subscribe</button>
   </form>
 </div>
-
