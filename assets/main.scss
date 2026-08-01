@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
   color: #2A2620;
   background-color: #FFF9F5;
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 20px;
   position: relative;
@@ -22,7 +22,7 @@ body {
 
 @media (min-width: 1180px) {
   body {
-    margin: 0 auto 0 max(40px, calc(50% - 520px));
+    margin: 0 auto 0 max(40px, calc(50% - 460px));
   }
 }
 
