@@ -949,7 +949,7 @@ li {
   max-width: 30%;
   height: auto;
   padding: 6px;
-  background-color: #FFF9F5;
+  background-color: #FFFFFF;
 }
 
 .page-content img:not(.profile-photo) {
@@ -986,7 +986,7 @@ li {
   padding: 7px 12px;
   border-radius: 0;
   color: #2A2620;
-  background: #FFF9F5;
+  background: #FFFFFF;
   box-shadow: 3px 3px 0 #2A2620;
   text-decoration: none;
   line-height: 1.5;
@@ -994,7 +994,7 @@ li {
 }
 .site-nav .page-link:hover {
   background-color: #B5563A;
-  color: #FFF9F5;
+  color: #FFFFFF;
   text-decoration: none;
 }
 .site-nav .page-link:active {
@@ -1004,7 +1004,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .site-nav {
-    background-color: #FFF9F5;
+    background-color: #FFFFFF;
     border: 1px solid #2A2620;
   }
 }
@@ -1130,7 +1130,7 @@ blockquote.warn.plain::before, blockquote.aside.plain::before {
   padding: 1.2em 1.4em;
   border: 1px solid #2A2620;
   border-radius: 0;
-  background-color: #FFF0E8;
+  background-color: #FFFFFF;
   box-shadow: 3px 3px 0 #2A2620;
 }
 
@@ -1153,7 +1153,7 @@ blockquote.warn.plain::before, blockquote.aside.plain::before {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.9em;
   color: #2A2620;
-  background-color: #FFF9F5;
+  background-color: #FFFFFF;
   border: 1px solid #2A2620;
   border-radius: 0;
   outline: none;
@@ -1171,7 +1171,7 @@ blockquote.warn.plain::before, blockquote.aside.plain::before {
   letter-spacing: 0.08em;
   padding: 8px 16px;
   color: #2A2620;
-  background-color: #FFF9F5;
+  background-color: #FFFFFF;
   border: 1px solid #2A2620;
   border-radius: 0;
   box-shadow: 3px 3px 0 #2A2620;
@@ -1179,7 +1179,7 @@ blockquote.warn.plain::before, blockquote.aside.plain::before {
 }
 .subscribe-form button:hover {
   background-color: #B5563A;
-  color: #FFF9F5;
+  color: #FFFFFF;
 }
 .subscribe-form button:active {
   transform: translate(3px, 3px);
