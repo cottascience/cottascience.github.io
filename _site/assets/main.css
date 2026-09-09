@@ -1007,6 +1007,14 @@ li {
     background-color: #FFFFFF;
     border: 1px solid #2A2620;
   }
+  .site-nav .trigger {
+    padding: 0 15px 15px;
+  }
+  .site-nav .page-link {
+    display: block;
+    margin: 12px 0 0;
+    text-align: center;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .page-content {
