@@ -1,0 +1,12 @@
+{
+  "id": "example-schematic",
+  "title": "From measurements to prediction",
+  "alt": "Measurements pass through an encoder to produce a prediction. A label beneath the encoder identifies its learned representation z.",
+  "caption": "A schematic of a prediction pipeline; arrows indicate information flow.",
+  "data_kind": "diagram",
+  "data_source": "Conceptual illustration; no measured quantities or scale.",
+  "width": 680,
+  "seed": 1729,
+  "font": "TeX Gyre Pagella",
+  "requires": []
+}

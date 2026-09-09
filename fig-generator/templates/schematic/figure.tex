@@ -1,0 +1,13 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+\begin{tikzpicture}[node distance=13mm]
+  \node[figure box] (data) {Measurements};
+  \node[figure box,right=of data] (model) {Encoder};
+  \node[figure box,right=of model,draw=accent] (output) {Prediction};
+  \draw[figure arrow] (data) -- (model);
+  \draw[figure arrow] (model) -- (output);
+  \node[figure note,below=10mm of model] (note) {Learned representation $z$};
+  \draw[muted,line width=.5pt] (model.south) -- (note.north);
+\end{tikzpicture}
+\end{document}

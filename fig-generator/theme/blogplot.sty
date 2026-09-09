@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{blogplot}[2026/09/09 Blog plot theme]
+\RequirePackage{blogfigure}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18,
+  blog axis/.style={
+    width=15cm,height=9cm,
+    axis line style={ink,line width=.7pt},
+    tick style={ink},tick align=outside,
+    tick label style={font=\FigureNoteFont},label style={font=\FigureLabelFont},
+    grid=major,major grid style={grid,line width=.3pt},
+    axis background/.style={fill=paper},
+    legend style={draw=none,fill=paper,font=\FigureNoteFont,cells={anchor=west}},
+    every axis plot/.append style={line width=1pt},
+  },
+  blog primary/.style={accent,mark=*,mark size=2pt},
+  blog secondary/.style={ink,dashed,mark=square*,mark size=1.8pt},
+}
+\endinput

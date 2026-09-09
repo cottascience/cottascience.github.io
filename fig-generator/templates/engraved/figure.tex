@@ -1,0 +1,17 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogengraving}
+\begin{document}
+\begin{mplibcode}
+  numeric baseDiameter;
+  baseDiameter := 1.8cm;
+  for i = 0 upto 2:
+    draw sphere.c(baseDiameter * (1 + i/2)) shifted (i * 4.5cm, 0);
+  endfor;
+  label.bot(btex Radius $r$ etex, (0, -2.1cm));
+  label.bot(btex Radius $1.5r$ etex, (4.5cm, -2.1cm));
+  label.bot(btex Radius $2r$ etex, (9cm, -2.1cm));
+  label.bot(btex Volume $V$ etex, (0, -2.8cm));
+  label.bot(btex Volume $3.375V$ etex, (4.5cm, -2.8cm));
+  label.bot(btex Volume $8V$ etex, (9cm, -2.8cm));
+\end{mplibcode}
+\end{document}

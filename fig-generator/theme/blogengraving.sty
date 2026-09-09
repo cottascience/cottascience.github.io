@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{blogengraving}[2026/09/09 Optional fiziko renderer]
+\RequirePackage{blogfigure}
+\RequirePackage{luamplib}
+\mplibforcehmode
+\everymplib{
+  input fiziko.mp;
+  randomseed := \FigureSeed;
+  defineMinStrokeWidth(0.7pt);
+  defineLightDirection(-pi/4, pi/6);
+  drawoptions(withcolor (0.1647, 0.1490, 0.1255));
+  beginfig(1);
+}
+\everyendmplib{endfig;}
+\endinput
