@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{blogfigure}[2026/09/09 Blog figure theme]
+\RequirePackage{iftex}
+\ifLuaTeX\else
+  \PackageError{blogfigure}{LuaLaTeX is required}{Use figure.py render.}
+\fi
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns.meta}
+\InputIfFileExists{settings.tex}{}{}
+\providecommand{\FigureFont}{TeX Gyre Pagella}
+\providecommand{\FigureSeed}{1729}
+\setmainfont{\FigureFont}
+\setmathfont{TeX Gyre Pagella Math}
+\definecolor{paper}{HTML}{FFFDFA}
+\definecolor{ink}{HTML}{2A2620}
+\definecolor{muted}{HTML}{5A5F7A}
+\definecolor{accent}{HTML}{B5563A}
+\definecolor{grid}{HTML}{DED8CF}
+\color{ink}
+\pagestyle{empty}
+\newcommand{\FigureLabelFont}{\fontsize{16}{20}\selectfont}
+\newcommand{\FigureNoteFont}{\fontsize{14}{17}\selectfont}
+\AtBeginDocument{\FigureLabelFont}
+\pgfmathsetseed{\FigureSeed}
+\tikzset{
+  every picture/.style={font=\FigureLabelFont,draw=ink,line width=.7pt},
+  figure arrow/.style={-{Stealth[length=2.5mm]},draw=ink,line width=.8pt},
+  figure box/.style={draw=ink,fill=paper,rounded corners=2pt,
+    minimum height=13mm,text width=38mm,align=center,inner sep=5pt},
+  figure hatch/.style={pattern={Lines[angle=45,distance=4pt,line width=.35pt]},pattern color=muted},
+  figure note/.style={font=\FigureNoteFont\itshape,text=muted,align=center},
+}
+\endinput

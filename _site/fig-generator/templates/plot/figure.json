@@ -1,0 +1,12 @@
+{
+  "id": "example-plot",
+  "title": "Illustrative learning curve",
+  "alt": "Synthetic validation loss declines from 1.2 to 0.38 over 100 training steps, with diminishing improvements.",
+  "caption": "An illustrative learning curve using synthetic values; these are not experimental measurements.",
+  "data_kind": "illustrative",
+  "data_source": "Hand-authored synthetic values in data.csv, for demonstration only.",
+  "width": 680,
+  "seed": 1729,
+  "font": "TeX Gyre Pagella",
+  "requires": []
+}

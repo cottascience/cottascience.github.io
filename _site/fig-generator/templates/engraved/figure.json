@@ -1,0 +1,12 @@
+{
+  "id": "example-engraved",
+  "title": "Sphere size and volume",
+  "alt": "Three engraved spheres have radii r, 1.5r, and 2r. Their volumes relative to the smallest sphere are 1, 3.375, and 8.",
+  "caption": "For a sphere, volume grows with the cube of its radius. Shading is illustrative.",
+  "data_kind": "diagram",
+  "data_source": "Sphere volume ratios computed from V = (4/3) pi r cubed; drawing uses fiziko.",
+  "width": 680,
+  "seed": 1729,
+  "font": "TeX Gyre Pagella",
+  "requires": ["fiziko"]
+}
