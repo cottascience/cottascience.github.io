@@ -658,8 +658,8 @@ body {
   line-height: 1.6;
   color: #111111;
   background-color: #FFFFFF;
-  background-image: radial-gradient(rgba(17, 17, 17, 0.09) 0.8px, transparent 0.8px);
-  background-size: 18px 18px;
+  background-image: linear-gradient(rgba(17, 17, 17, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 17, 17, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
   max-width: 680px;
   margin: 0 auto;
   padding: 20px;
