@@ -7,6 +7,7 @@ is the command reference the agent uses to carry it out.
 ## Dependencies
 
 Python 3.10 or newer, a recent TeX Live/MacTeX distribution, Poppler, and librsvg.
+ImageMagick is optional, for [photo effects](#photo-effects-with-imagemagick).
 There are no pip dependencies. `rtk proxy` in the examples follows this repo's
 command convention; outside this repo, the underlying `python3` command works
 without RTK.
@@ -39,7 +40,7 @@ For manual setup on macOS:
 
 ```sh
 rtk proxy brew install --cask mactex-no-gui
-rtk proxy brew install python poppler librsvg
+rtk proxy brew install python poppler librsvg imagemagick
 ```
 
 Restart your shell after installing MacTeX so `/Library/TeX/texbin` is on `PATH`.
@@ -47,7 +48,7 @@ On Debian/Ubuntu:
 
 ```sh
 rtk proxy sudo apt-get update
-rtk proxy sudo apt-get install python3 ca-certificates texlive-luatex texlive-latex-extra texlive-pictures texlive-fonts-recommended texlive-metapost tex-gyre fonts-texgyre-math poppler-utils librsvg2-bin
+rtk proxy sudo apt-get install python3 ca-certificates texlive-luatex texlive-latex-extra texlive-pictures texlive-fonts-recommended texlive-metapost tex-gyre fonts-texgyre-math poppler-utils librsvg2-bin imagemagick
 ```
 
 Run `doctor` to check executable and package availability:
@@ -138,7 +139,7 @@ Metadata fields:
 | `data_source` | Nonempty description of the dataset, formula, or conceptual basis |
 | `width` | Optional CSS-pixel width, 240–1360; default 680 |
 | `seed` | Optional integer, 0–4095; default 1729 |
-| `font` | Optional installed text-font family; default `TeX Gyre Pagella` |
+| `font` | Optional installed text-font family; default `JetBrains Mono` |
 | `requires` | Optional list; use `["fiziko"]` for engraved figures |
 
 The starter metadata describes the starter illustration. Update it when changing
@@ -211,6 +212,67 @@ between `btex` and `etex` uses the document fonts. The shared style sets the ink
 stroke width, light direction, and seed. Avoid MetaPost variable names that shadow
 built-ins such as `floor`. Inspect more complex textures at mobile size and watch
 the resulting SVG file size.
+
+## Photo effects with ImageMagick
+
+For photos and raster art (post heroes, portraits, screenshots) that must sit next
+to the plates. Everything maps onto the [STYLE.md](STYLE.md) palette: ink `#111111`,
+paper `#FFFFFF`, no color. Write results to `assets/images/`; never overwrite the
+original. Resize first (`-resize 1200x`) so blur and noise radii stay consistent
+between sources.
+
+```sh
+IN=assets/images/photo.jpg
+
+# Newsprint grayscale: stretch contrast, then map black/white onto ink/paper.
+rtk proxy magick "$IN" -resize 1200x -colorspace Gray -contrast-stretch 1%x1% \
+  +level-colors '#111111','#FFFFFF' assets/images/photo-gray.jpg
+
+# Soft focus: 0x1 is barely there, 0x3 is dreamy. Add to any recipe below.
+rtk proxy magick assets/images/photo-gray.jpg -blur 0x1.5 assets/images/photo-soft.jpg
+
+# Scanlines: tile a 1x4 strip (one gray row, three white) and multiply it on.
+# Pitch: 1x3 is tight, 1x6 reads as CRT. Row gray: #999999 bold, #CCCCCC faint.
+rtk proxy magick assets/images/photo-gray.jpg \
+  \( -size 1x4 xc:white -fill '#999999' -draw 'point 0,0' -write mpr:scan +delete \) \
+  \( +clone -tile mpr:scan -draw 'color 0,0 reset' \) -compose multiply -composite \
+  assets/images/photo-scan.jpg
+
+# Halftone: real two-tone dots, the raster twin of `figure halftone`.
+# h4x4o fine, h8x8o coarse newspaper, h16x16o poster. Saves as a tiny PNG.
+rtk proxy magick "$IN" -resize 1200x -colorspace Gray -ordered-dither h8x8o \
+  +level-colors '#111111','#FFFFFF' assets/images/photo-halftone.png
+
+# Film grain: -attenuate 0.2 subtle, 0.6 heavy.
+rtk proxy magick assets/images/photo-gray.jpg -attenuate 0.4 +noise Gaussian \
+  -colorspace Gray assets/images/photo-grain.jpg
+
+# Fade to paper: edges melt into the white page instead of a hard crop.
+rtk proxy magick assets/images/photo-gray.jpg -background white -vignette 0x40 \
+  assets/images/photo-fade.jpg
+```
+
+The house plate combines them: gray, a touch of blur, light grain, faint tight
+scanlines, stripped metadata.
+
+```sh
+rtk proxy magick "$IN" -resize 1200x -colorspace Gray -contrast-stretch 1%x1% \
+  -blur 0x0.8 -attenuate 0.3 +noise Gaussian -colorspace Gray \
+  \( -size 1x3 xc:white -fill '#AAAAAA' -draw 'point 0,0' -write mpr:scan +delete \) \
+  \( +clone -tile mpr:scan -draw 'color 0,0 reset' \) -compose multiply -composite \
+  +level-colors '#111111','#FFFFFF' -strip -quality 82 assets/images/photo-plate.jpg
+```
+
+Order matters: grayscale before noise (or the grain is colored), scanlines after
+blur (or they smear), `-compose over` after a multiply (the setting persists and
+turns a later `-vignette` black), `+geometry` after any `-geometry` composite (or
+the scanline tile lands offset), `+level-colors` last so the darkest pixel is ink, not pure
+black. Compare variants side by side with
+`magick a.jpg b.jpg -resize 600x +append /tmp/compare.png`. On a dark image, multiply only marks the whites; also `-compose screen` a
+`#1A1A1A` tile with a black row so the lines show on the black field. Scanlines and
+halftone alias when the browser downscales them: export at the displayed width and
+check at mobile size. Keep `-strip` on anything published, since it removes EXIF
+data such as GPS location.
 
 ## Publish reviewed assets
 

@@ -1,0 +1,40 @@
+\documentclass[12pt,border=0pt]{standalone}
+\usepackage{blogfigure}
+% Cover plate, inverted: paper strokes on an ink field.
+% Left to right, a grid of marks loses its randomness and converges on one form.
+\begin{document}
+\begin{tikzpicture}[line width=.9pt,draw=paper]
+  \fill[ink] (0,0) rectangle (16,10.4);
+  % Thin inverted rules top and bottom, masthead echo.
+  \draw[paper,line width=2.4pt] (0.9,9.75) -- (15.1,9.75);
+  \draw[paper,line width=.5pt] (0.9,9.58) -- (15.1,9.58);
+  \draw[paper,line width=2.4pt] (0.9,0.65) -- (15.1,0.65);
+  % Behind the circle: halftone slab and a hatched diagonal band.
+  \fill[pattern={Dots[distance=3pt,radius=.6pt]},pattern color=paper]
+    (10.2,1.4) rectangle (14.2,6.4);
+  \begin{scope}
+    \clip (8.6,1.2) rectangle (15.1,9.2);
+    \fill[pattern={Lines[angle=45,distance=3pt,line width=.5pt]},pattern color=paper]
+      (8.4,2.4) -- (9.4,1.2) -- (16,8.2) -- (15,9.4) -- cycle;
+  \end{scope}
+  % The grid: one primitive, a round-capped bar. Chaos c falls from 1 to 0
+  % across 14 columns; bars shorten and align until they collapse into dots.
+  \foreach \i in {0,...,13} {
+    \foreach \j in {0,...,11} {
+      \pgfmathsetmacro{\c}{(1-\i/13)^1.6}
+      \pgfmathsetmacro{\x}{0.95+\i*0.66+\c*0.08*rand}
+      \pgfmathsetmacro{\y}{1.45+\j*0.66+\c*0.08*rand}
+      \pgfmathsetmacro{\rot}{\c*90*rand}
+      \pgfmathsetmacro{\L}{\c*(0.2+0.06*rand)}
+      \draw[paper,line width=4.8pt,line cap=round,rotate around={\rot:(\x,\y)}]
+        (\x-\L,\y) -- (\x+\L,\y);
+    }
+  }
+  % The chosen form.
+  \fill[paper] (12.55,5.9) circle (2.3);
+  \fill[ink] (12.55,5.9) circle (0.5);
+  % Misregistered ring, like a second print pass that slipped.
+  \draw[paper,line width=.7pt] (12.85,5.6) circle (2.3);
+  \draw[paper,line width=1.6pt] (15.1,5.9) ++(0,-3.8) -- ++(0,7.6);
+\end{tikzpicture}
+\end{document}

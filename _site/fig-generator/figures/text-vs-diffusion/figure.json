@@ -1,0 +1,12 @@
+{
+  "id": "text-vs-diffusion",
+  "title": "Text and diffusion share one skeleton",
+  "alt": "Two parallel chains. Text grows one token per step, each chosen by a categorical lookup with its own uniform input. A noisy grid becomes a clean pattern through Gaussian updates. Both are labeled Y = F(X, U).",
+  "caption": "Different states, same skeleton: deterministic updates driven by independent noise.",
+  "data_kind": "illustrative",
+  "data_source": "Conceptual diagram. Token example (mat/sofa/roof, u=0.63 picks sofa) from the post. Noise grids are pseudorandom (TikZ rnd, seeded with the metadata seed) blended with a Gaussian blob, drawn as halftone dots; they are illustrative, not model outputs.",
+  "width": 383,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

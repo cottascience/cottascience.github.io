@@ -50,7 +50,7 @@ allows them, and identify them in the figure and caption.
 | --- | --- |
 | Visual style | Shared theme in `theme/`, as specified by STYLE.md |
 | Layout | One clear figure; split panels only when the comparison needs them |
-| Size | 680px article width, reviewed at 340px mobile width |
+| Size | ~0.95 px per PDF point (labels ≈ body text), reviewed at 340px mobile width |
 | Source | `fig-generator/figures/<descriptive-slug>/` |
 | Description | Agent-authored title, alt text, caption, and data provenance |
 | Output | SVG, PDF, PNG, mobile PNG, and HTML preview |

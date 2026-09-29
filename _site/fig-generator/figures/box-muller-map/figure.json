@@ -1,0 +1,12 @@
+{
+  "id": "box-muller-map",
+  "title": "Box–Muller as a pushforward",
+  "alt": "A unit square gridded into equal-probability cells maps to rings and wedges in the plane; two highlighted cells of equal probability become a small inner sector and a much larger outer one.",
+  "caption": "Equal probability, unequal area: Box–Muller packs mass near the origin and spreads it thin far away.",
+  "data_kind": "diagram",
+  "data_source": "Exact Box–Muller geometry: radii sqrt(-2 log u) for u = 3/4, 1/2, 1/4 (0.7585, 1.1774, 1.6651) and angles 2*pi*k/8.",
+  "width": 509,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

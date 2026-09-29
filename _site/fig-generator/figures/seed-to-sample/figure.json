@@ -1,0 +1,12 @@
+{
+  "id": "seed-to-sample",
+  "title": "From seed to sample",
+  "alt": "A pipeline from seed through generator state and a 16-point grid to the sampling function and output, with an inset showing a boundary at 0.10 between grid points 1/16 and 2/16, giving an actual probability of 0.125.",
+  "caption": "All the way down: a seed drives a finite grid, and a probability boundary can only fall between grid points.",
+  "data_kind": "diagram",
+  "data_source": "Toy generator S_{t+1} = (5 S_t + 1) mod 16, U_t = S_t/16, from the post. Thumbnails reuse the die boundaries (.05, .15, .30, .50, .70) and Box-Muller radii (0.76, 1.18, 1.67), scaled down.",
+  "width": 436,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

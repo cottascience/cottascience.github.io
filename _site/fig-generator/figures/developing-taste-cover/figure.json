@@ -1,0 +1,12 @@
+{
+  "id": "developing-taste-cover",
+  "title": "Developing taste",
+  "alt": "Abstract cover in white on black. A grid of short white bars, long and randomly tilted on the left, shortens and aligns toward the right until it becomes an orderly field of identical dots, ending at a single large white circle over a halftone slab and a hatched diagonal band.",
+  "caption": "Taste as selection: noise, pruned until one form remains.",
+  "data_kind": "diagram",
+  "data_source": "Abstract illustration; seeded random bar tilts and lengths, no data.",
+  "width": 1280,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

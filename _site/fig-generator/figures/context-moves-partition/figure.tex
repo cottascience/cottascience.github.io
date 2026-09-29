@@ -1,0 +1,32 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+% Same x scale and segment styling as die-interval-sampler.
+\begin{tikzpicture}[x=13cm,y=1cm,
+  seg odd/.style={fill=paper,draw=ink},
+  seg even/.style={draw=ink,figure halftone},
+  face/.style={fill=paper,inner sep=1.5pt}]
+  % \row{y}{a/b/face list}{tick list}{context}{output}
+  \newcommand{\partitionrow}[5]{
+    \foreach \a/\b/\k [count=\i] in {#2} {
+      \ifodd\i \draw[seg odd] (\a,#1) rectangle (\b,#1+0.8);
+      \else \draw[seg even] (\a,#1) rectangle (\b,#1+0.8); \fi
+      \node[face] at ({(\a+\b)/2 - (abs((\a+\b)/2-0.42)<0.05)*0.04},#1+0.4) {\k};
+    }
+    \draw[line width=1.4pt] (0,#1) rectangle (1,#1+0.8);
+    \foreach \t/\l/\dx in {#3}
+      \draw (\t,#1) -- (\t,#1-0.15) node[below,font=\FigureNoteFont,inner sep=2pt,xshift=\dx] {$\l$};
+    \node[text=muted,anchor=east] at (-0.03,#1+0.4) {$#4$};
+    \node[figure box,figure solid,text width=,minimum width=10mm,minimum height=8mm,anchor=west] at (1.03,#1+0.4) {\textbf{#5}};
+  }
+  \partitionrow{2.4}{0/.05/1,.05/.15/2,.15/.30/3,.30/.50/4,.50/.70/5,.70/1/6}
+    {0/0/-3pt,.05/.05/5pt,.15/.15/0pt,.30/.30/0pt,.50/.50/0pt,.70/.70/0pt,1/1/0pt}{x_0}{4}
+  \partitionrow{0}{0/.30/1,.30/.50/2,.50/.70/3,.70/.85/4,.85/.95/5,.95/1/6}
+    {0/0/0pt,.30/.30/0pt,.50/.50/0pt,.70/.70/0pt,.85/.85/0pt,.95/.95/-5pt,1/1/3pt}{x_1}{2}
+  % shared noise
+  \draw[dashed,line width=2pt] (0.42,-0.2) -- (0.42,3.3);
+  \node[fill=paper,inner sep=2pt,anchor=south] at (0.42,3.45) {$u=0.42$};
+  \FigureMasthead{-0.1}{1.1}{4.85}{}{}
+  \FigureFootRule{-0.1}{1.1}{-1.0}
+\end{tikzpicture}
+\end{document}

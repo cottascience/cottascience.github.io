@@ -1,0 +1,12 @@
+{
+  "id": "quantile-sampling",
+  "title": "Inverse-CDF sampling, continuous and discrete",
+  "alt": "Left, the curve y² with height 1/4 mapping to y = 1/2. Right, a staircase CDF where the band of heights from 0.30 to 0.50 maps entirely to face 4.",
+  "caption": "Pick a height, read across to the CDF. A steep stretch concentrates outcomes; a jump claims a whole band of heights.",
+  "data_kind": "diagram",
+  "data_source": "Exact curves: F(y)=y^2 on [0,1], and the staircase CDF of the loaded die with probabilities (0.05, 0.10, 0.15, 0.20, 0.20, 0.30) from the post.",
+  "width": 434,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

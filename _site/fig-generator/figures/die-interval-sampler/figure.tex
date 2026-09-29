@@ -1,0 +1,38 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+% x scale: unit interval drawn 13cm wide. Segment styling shared with context-moves-partition.
+\begin{tikzpicture}[x=13cm,y=1cm,
+  seg odd/.style={fill=paper,draw=ink},
+  seg even/.style={draw=ink,figure halftone},
+  face/.style={fill=paper,inner sep=1.5pt}]
+  \FigureMasthead{-0.1}{1.02}{5.25}{}{}
+  % table
+  \foreach \k/\p [count=\i] in {1/0.05,2/0.10,3/0.15,4/0.20,5/0.20,6/0.30} {
+    \pgfmathsetmacro\cx{(\i-0.5)/6}
+    \node (f\i) at (\cx,3.6) {\k};
+    \node[font=\FigureNoteFont] (p\i) at (\cx,2.95) {$\p$};
+  }
+  \draw[figure rule thin] (0.02,3.25) -- (0.98,3.25);
+  \node[figure note,anchor=east] at (-0.01,3.6) {face};
+  \node[figure note,anchor=east] at (-0.01,2.95) {prob.};
+  % segments
+  \foreach \a/\b/\k [count=\i] in {0/.05/1,.05/.15/2,.15/.30/3,.30/.50/4,.50/.70/5,.70/1/6} {
+    \ifodd\i \draw[seg odd] (\a,0) rectangle (\b,0.8);
+    \else \draw[seg even] (\a,0) rectangle (\b,0.8); \fi
+    \node[face] at ({(\a+\b)/2 - (\i==4)*0.04},0.4) {\k};
+    \pgfmathsetmacro\cx{(\i-0.5)/6}
+    \draw[muted,line width=.45pt] (\cx,2.6) -- ({(\a+\b)/2},0.85);
+  }
+  \draw[line width=1.4pt] (0,0) rectangle (1,0.8);
+  % boundary ticks
+  \foreach \t/\l/\dx in {0/0/-3pt,.05/.05/5pt,.15/.15/0pt,.30/.30/0pt,.50/.50/0pt,.70/.70/0pt,1/1/0pt}
+    \draw (\t,0) -- (\t,-0.15) node[below,font=\FigureNoteFont,inner sep=2pt,xshift=\dx] {$\l$};
+  % draw at u=0.42
+  \draw[line width=2pt] (0.42,-0.1) -- (0.42,0.95);
+  \node[anchor=west] at (0.43,-1.0) {$u=0.42$};
+  \draw[figure emph arrow] (0.42,-0.15) -- (0.42,-1.35);
+  \node[figure box,figure solid,text width=,minimum width=14mm,minimum height=10mm,anchor=north] at (0.42,-1.4) {\textbf{4}};
+  \FigureFootRule{-0.1}{1.02}{-2.75}
+\end{tikzpicture}
+\end{document}

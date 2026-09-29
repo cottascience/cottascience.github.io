@@ -7,6 +7,6 @@
   "data_source": "Hand-authored synthetic values in data.csv, for demonstration only.",
   "width": 680,
   "seed": 1729,
-  "font": "TeX Gyre Pagella",
+  "font": "JetBrains Mono",
   "requires": []
 }

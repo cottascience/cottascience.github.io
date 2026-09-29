@@ -1,0 +1,12 @@
+{
+  "id": "apples-oranges-sets",
+  "title": "Apples and oranges as disjoint sets",
+  "alt": "Engraved newspaper-style illustration of two large circular sets side by side: A, packed with line-shaded apples, and O, packed with stipple-shaded oranges. The circles do not overlap, and the headline reads A intersect O equals the empty set.",
+  "caption": "Apples and oranges as disjoint sets: no element belongs to both, so A ∩ O = ∅. Engraved illustration; fruit counts and sizes are decorative.",
+  "data_kind": "diagram",
+  "data_source": "Conceptual set-theory illustration; fruit drawn with fiziko sphere shading on a jittered hex grid with the recorded seed.",
+  "width": 680,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": ["fiziko"]
+}

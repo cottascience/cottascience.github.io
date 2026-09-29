@@ -1,0 +1,12 @@
+{
+  "id": "sampler-composition",
+  "title": "Composing two samplers",
+  "alt": "A chain X to Y to Z, redrawn as deterministic boxes f and g receiving separate noise inputs U and V, enclosed in one function H.",
+  "caption": "Two sampling steps become one deterministic function of the context and two independent noise inputs.",
+  "data_kind": "diagram",
+  "data_source": "Conceptual diagram of Z = g(f(X,U),V) from the post 'Generate through the noise'.",
+  "width": 312,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

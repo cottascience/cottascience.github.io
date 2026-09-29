@@ -1,0 +1,12 @@
+{
+  "id": "coupling-f-vs-g",
+  "title": "Same marginals, different couplings",
+  "alt": "Four strips comparing samplers f and g in two modes. Both have success rates 1/4 and 3/4, but f's success regions are nested and g's are disjoint, so at u = 0.10 f gives (1,1) and g gives (1,0).",
+  "caption": "Same success rates, different worlds: f preserves every success, g destroys every one.",
+  "data_kind": "diagram",
+  "data_source": "Exact success intervals from the post: f(0,u)=1{u<1/4}, f(1,u)=1{u<3/4}, g(0,u)=1{u<1/4}, g(1,u)=1{u>=1/4}; joint laws computed from interval overlaps.",
+  "width": 397,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

@@ -1,0 +1,76 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogengraving}
+\begin{document}
+\begin{mplibcode}
+  numeric R, gap, cxA, cxO, s, d, j;
+  R := 3.6cm; gap := 8.4cm; cxA := 0; cxO := gap;
+  s := 0.98cm;                          % hex pitch < fruit size, so neighbours overlap like a pile
+  path leaf, dimple;
+  pair p;
+
+  % Apple: line-engraved sphere, top dimple, stem, hatched leaf.
+  vardef apple(expr d) =
+    image(
+      unfill fullcircle scaled d xscaled 1.08;
+      draw sphereLat(d, 25) xscaled 1.08;
+      draw ((-0.13d, 0.44d) .. (0, 0.37d) .. (0.13d, 0.44d)) withpen pencircle scaled 0.6pt;
+      draw ((0, 0.38d){up} .. (0.07d, 0.64d)) withpen pencircle scaled 1.3pt;
+      leaf := (0.05d, 0.56d) .. (0.26d, 0.72d) .. (0.44d, 0.66d) .. (0.24d, 0.54d) .. cycle;
+      unfill leaf;
+      draw solid(leaf, 45, 0);
+      draw leaf withpen pencircle scaled 0.6pt;
+      draw ((0.05d, 0.56d) .. (0.40d, 0.65d)) withpen pencircle scaled 0.4pt;
+    )
+  enddef;
+
+  % Orange: stippled sphere reads as dimpled peel; small star-shaped navel.
+  vardef orange(expr d) =
+    image(
+      unfill fullcircle scaled d;
+      draw sphere.s(d);
+      fill fullcircle scaled (0.07d) shifted (0.08d, 0.30d);
+      for k = 0 upto 4:
+        draw ((0.08d, 0.30d) -- ((0.08d, 0.30d) + dir(90 + 72k) scaled 0.07d))
+          withpen pencircle scaled 0.4pt;
+      endfor;
+    )
+  enddef;
+
+  % Fill a set with fruit on a jittered hex grid, back row first, inside the boundary.
+  def fillset(expr cx, isApple) =
+    for row = 5 downto -5:
+      for col = -5 upto 5:
+        p := ((col + if odd(row): 1/2 else: 0 fi) * s, row * s * sqrt(3)/2);
+        % leaf clearance: apples also keep their stem/leaf tip inside the circle
+        if (abs(p) < R - 0.62cm) and ((not isApple) or (abs(p + (0.2cm, 0.72cm)) < R - 0.15cm)):
+          d := 0.98cm + uniformdeviate(0.14cm);
+          j := 0.05cm;
+          p := p + (uniformdeviate(2j) - j, uniformdeviate(2j) - j) + (cx, 0);
+          if isApple: draw apple(d) rotated (uniformdeviate(24) - 12) shifted p;
+          else: draw orange(d) shifted p; fi;
+        fi;
+      endfor;
+    endfor;
+  enddef;
+
+  fillset(cxA, true);
+  fillset(cxO, false);
+  draw fullcircle scaled 2R shifted (cxA, 0) withpen pencircle scaled 1.6pt;
+  draw fullcircle scaled 2R shifted (cxO, 0) withpen pencircle scaled 1.6pt;
+
+  label(btex $A$ etex scaled 1.6, (cxA - 0.86R, 0.88R));
+  label(btex $O$ etex scaled 1.6, (cxO + 0.86R, 0.88R));
+  label.bot(btex $A = \{\text{apples}\}$ etex, (cxA, -R - 0.35cm));
+  label.bot(btex $O = \{\text{oranges}\}$ etex, (cxO, -R - 0.35cm));
+
+  % Masthead: heavy/thin rule pair, kicker, headline.
+  numeric L, Rr, top;
+  L := cxA - R - 0.3cm; Rr := cxO + R + 0.3cm; top := R + 2.9cm;
+  draw (L, top) -- (Rr, top) withpen pencircle scaled 2.4pt;
+  draw (L, top - 0.14cm) -- (Rr, top - 0.14cm) withpen pencircle scaled 0.5pt;
+  label.lrt(btex \FigureNoteFont SET THEORY etex, (L, top - 0.3cm));
+  label.llft(btex \FigureNoteFont DISJOINT SETS etex, (Rr, top - 0.3cm));
+  label(btex {\fontsize{30}{34}\selectfont $A \cap O = \varnothing$} etex, (1/2(cxA + cxO), top - 1.45cm));
+  draw (L, -R - 1.35cm) -- (Rr, -R - 1.35cm) withpen pencircle scaled 2.4pt;
+\end{mplibcode}
+\end{document}

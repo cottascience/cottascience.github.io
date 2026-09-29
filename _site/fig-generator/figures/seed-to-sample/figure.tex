@@ -1,0 +1,63 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+\begin{tikzpicture}[
+  det/.style={draw=ink,fill=paper,rounded corners=0pt,minimum height=11mm,minimum width=11mm,inner sep=4pt,align=center},
+  thin/.style={muted,line width=.5pt},
+]
+  \FigureMasthead{-0.5}{14.9}{3.85}{}{}
+  % ---- pipeline ----
+  \node (s0) at (0,0) {$S_0$};
+  \node[det] (st) at (1.8,0) {$S_t$};
+  \path (st) edge[figure arrow,loop above,looseness=6,min distance=10mm] node[above,inner sep=2pt] {$T$} (st);
+  \node[figure note,anchor=south] at (1.8,1.75) {$(5s+1)\bmod 16$};
+  \node (j) at (3.6,0) {$J_t$};
+  \draw[figure arrow] (s0) -- (st);
+  \draw[figure arrow] (st) -- (j);
+  % 16-point grid on [0,1)
+  \def\gx{4.6}\def\gw{4.0}
+  \draw[figure arrow] (j) -- (\gx-0.2,0);
+  \draw[ink] (\gx,0) -- (\gx+\gw,0);
+  \foreach \k in {0,...,15} \fill[ink] (\gx+\k*\gw/16,0) circle (1.6pt);
+  \draw[ink,fill=paper] (\gx+\gw,0) circle (1.6pt);
+  \draw[ink,line width=1.4pt] (\gx,0) -- (\gx+\gw,0);
+  \node[font=\FigureNoteFont,below=1pt] at (\gx,-0.1) {$0$};
+  \node[font=\FigureNoteFont,below=1pt] at (\gx+\gw,-0.1) {$1$};
+  \node[above=2pt] at (\gx+\gw/2,0.1) {$U_t=J_t/16$};
+  \node[det] (f) at (10.1,0) {$f$};
+  \draw[figure arrow] (\gx+\gw+0.15,0) -- (f);
+  % thumbnails: categorical (top), Gaussian (bottom)
+  \begin{scope}[shift={(11.5,0.75)}]
+    \foreach \a/\b/\h in {0/.05/0,.05/.15/1,.15/.30/0,.30/.50/1,.50/.70/0,.70/1/1} {
+      \ifnum\h=1 \fill[figure halftone] (2*\a,0) rectangle (2*\b,0.4); \fi
+      \draw[ink,line width=.5pt] (2*\a,0) rectangle (2*\b,0.4);
+    }
+  \end{scope}
+  \begin{scope}[shift={(12.5,-0.95)}]
+    \foreach \r in {0.76,1.18,1.67} \draw[ink,line width=.5pt] (0,0) circle (0.36*\r);
+    \foreach \t in {0,45,...,315} \draw[ink,line width=.4pt] (0,0) -- (\t:0.66);
+  \end{scope}
+  \draw[figure arrow] (f.east) -- (11.4,0.9);
+  \draw[figure arrow] (f.east) -- (11.75,-0.8);
+  \node (y) at (14.4,0) {$Y$};
+  \draw[figure arrow] (13.6,0.9) -- (y);
+  \draw[figure arrow] (13.25,-0.8) -- (y);
+
+  % ---- inset: magnify [0, 0.2] ----
+  \def\ix{3.6}\def\is{26} % inset origin, cm per unit
+  \def\iy{-3.4}
+  \draw[thin,dashed] (\gx,-0.05) -- (\ix,\iy+0.35);
+  \draw[thin,dashed] (\gx+0.25*\gw,-0.05) -- (\ix+0.25*\is,\iy+0.35);
+  \draw[ink] (\ix,\iy) -- (\ix+0.25*\is,\iy);
+  \draw[ink,line width=2pt] (\ix+0.10*\is,\iy-0.3) -- (\ix+0.10*\is,\iy+0.55)
+    node[above,inner sep=2pt] {$0.10$};
+  \fill[figure halftone] (\ix,\iy-0.3) rectangle (\ix+0.10*\is,\iy+0.3);
+  \foreach \k/\c in {0/1,1/1,2/0,3/0,4/0} {
+    \ifnum\c=1 \fill[ink] (\ix+\k*\is/16,\iy) circle (4pt);
+    \else \draw[ink,fill=paper,line width=1pt] (\ix+\k*\is/16,\iy) circle (3pt); \fi
+    \node[font=\FigureNoteFont,below=5pt] at (\ix+\k*\is/16,\iy) {\ifnum\k=0 $0$\else $\k/16$\fi};
+  }
+  \node[figure solid,anchor=north,inner sep=5pt] at (\ix+0.125*\is,\iy-1.05) {$P(U<0.10)=2/16$};
+  \FigureFootRule{-0.5}{14.9}{\iy-2.3}
+\end{tikzpicture}
+\end{document}

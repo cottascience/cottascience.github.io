@@ -1,0 +1,12 @@
+{
+  "id": "die-interval-sampler",
+  "title": "Sampling a loaded die from a uniform draw",
+  "alt": "A unit interval divided into six pieces sized by the die's probabilities; a draw at 0.42 falls in the fourth piece and outputs face 4.",
+  "caption": "Cut the interval by the probabilities, then let a uniform draw pick the piece.",
+  "data_kind": "diagram",
+  "data_source": "Loaded-die probabilities (0.05, 0.10, 0.15, 0.20, 0.20, 0.30) from the post; segment widths are exact cumulative sums.",
+  "width": 431,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

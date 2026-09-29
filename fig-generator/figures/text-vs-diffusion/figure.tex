@@ -1,0 +1,51 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+\begin{tikzpicture}[
+  det/.style={draw=ink,fill=paper,rounded corners=0pt,minimum height=12mm,inner sep=5pt,align=center},
+  state/.style={draw=ink,fill=paper,rounded corners=0pt,minimum height=12mm,inner sep=5pt,align=center},
+  noise/.style={figure emph arrow},
+]
+  \FigureMasthead{0.1}{13.5}{3.6}{}{}
+  % ---- text chain (y = 0) ----
+  \node[state,text width=40mm] (s1) at (2.3,0) {The cat sat\\on the};
+  \node[det,minimum width=11mm] (c1) at (5.4,0) {$C$};
+  \node[state,text width=40mm] (s2) at (8.5,0) {The cat sat\\on the \textbf{sofa}};
+  \node[det,minimum width=11mm] (c2) at (11.6,0) {$C$};
+  \node (d1) at (13.15,0) {$\cdots$};
+  \draw[figure arrow] (s1) -- (c1);
+  \draw[figure arrow] (c1) -- (s2);
+  \draw[figure arrow] (s2) -- (c2);
+  \draw[figure arrow] (c2) -- (d1);
+  \draw[noise] (5.4,1.9) node[above] {$U_1$} -- (c1.north);
+  \draw[noise] (11.6,1.9) node[above] {$U_2$} -- (c2.north);
+  \node[figure note,anchor=east] at (13.5,-1.3) {$Y=F_\theta(X,\mathbf U)$};
+
+  % ---- diffusion chain (y = -4.6) ----
+  % grid: #1 lower-left x, #2 lower-left y, #3 signal weight (0 = pure noise)
+  \newcommand{\grid}[3]{%
+    \foreach \i in {0,...,7} \foreach \j in {0,...,7} {
+      \pgfmathsetmacro\v{int(round(100*min(1,max(0,
+        #3*exp(-((\i-3.5)^2+(\j-3.5)^2)/5) + (1-#3)*rnd))))}
+      % halftone: dot area proportional to ink density, no gray levels
+      \fill[ink] ({#1+\i*0.25+0.125},{#2+\j*0.25+0.125}) circle ({0.15*sqrt(\v/100)});
+    }
+    \draw[ink] (#1,#2) rectangle ++(2,2);
+  }
+  \grid{0.6}{-5.6}{0}
+  \node[det] (m) at (4.6,-4.6) {$\mu_\theta+\sigma_t\varepsilon$};
+  \grid{6.6}{-5.6}{0.5}
+  \node (d2) at (9.6,-4.6) {$\cdots$};
+  \grid{10.6}{-5.6}{1}
+  \draw[figure arrow] (2.6,-4.6) -- (m.west);
+  \draw[figure arrow] (m.east) -- (6.6,-4.6);
+  \draw[figure arrow] (8.6,-4.6) -- (d2);
+  \draw[figure arrow] (d2) -- (10.6,-4.6);
+  \draw[noise,dash pattern=on 4pt off 2.5pt] (4.6,-2.9) node[above] {$\varepsilon_{T-1}$} -- (m.north);
+  \node[below] at (1.6,-5.6) {$Z_T$};
+  \node[below] at (7.6,-5.6) {$Z_{T-1}$};
+  \node[below] at (11.6,-5.6) {$Z_0$};
+  \node[figure note,anchor=east] at (13.5,-6.75) {$Y=F_\theta(X,\mathbf U)$};
+  \FigureFootRule{0.1}{13.5}{-7.35}
+\end{tikzpicture}
+\end{document}

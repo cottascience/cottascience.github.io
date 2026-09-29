@@ -60,7 +60,7 @@ def validate_metadata(directory):
         raise FigureError("data_kind must be illustrative, measured, or diagram")
     meta.setdefault("width", 680)
     meta.setdefault("seed", 1729)
-    meta.setdefault("font", "TeX Gyre Pagella")
+    meta.setdefault("font", "JetBrains Mono")
     meta.setdefault("requires", [])
     if type(meta["width"]) is not int or not 240 <= meta["width"] <= 1360:
         raise FigureError("width must be an integer between 240 and 1360 CSS pixels")
@@ -155,11 +155,11 @@ def preview_page(meta):
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — figure review</title>
 <style>
-body {{ background:#FFFDFA; color:#2A2620; font:16px/1.6 Georgia,serif; margin:24px; }}
+body {{ background:#FFFFFF; color:#111111; font:16px/1.6 Lora,Georgia,serif; margin:24px; }}
 section {{ max-width:{meta['width']}px; margin:32px 0; }}
 figure {{ margin:0; }} img {{ display:block; width:100%; height:auto; }}
-figcaption {{ color:#5A5F7A; font-style:italic; margin-top:12px; }}
-.mobile {{ max-width:340px; }} a {{ color:#B5563A; }}
+figcaption {{ color:#6B6B6B; font-style:italic; margin-top:12px; }}
+.mobile {{ max-width:340px; }} a {{ color:#111111; }}
 </style>
 <h1>{title}</h1>
 <p>Review the SVG at both sizes. Check labels, clipping, meaning, and data against the source.</p>
@@ -221,7 +221,7 @@ def render(args):
         box = decorate_svg(svg, meta)
         for suffix, width in (("", meta["width"] * 2), ("-mobile", min(meta["width"], 340))):
             run(["rsvg-convert", "--width", str(width), "--keep-aspect-ratio",
-                 "--background-color", "#FFFDFA", "--output", str(work / f"{meta['id']}{suffix}.png"), str(svg)],
+                 "--background-color", "#FFFFFF", "--output", str(work / f"{meta['id']}{suffix}.png"), str(svg)],
                 work, work / f"png{suffix}.log", env, args.timeout)
         tex_log = (work / f"{meta['id']}.log").read_text(encoding="utf-8", errors="replace")
         if "Missing character:" in tex_log:

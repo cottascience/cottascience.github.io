@@ -77,14 +77,16 @@ missing_python=false
 missing_tex=false
 missing_poppler=false
 missing_rsvg=false
+missing_magick=false
 python_ready || missing_python=true
 tex_ready || missing_tex=true
 if ! have pdftocairo || ! have pdfinfo; then missing_poppler=true; fi
 have rsvg-convert || missing_rsvg=true
+have magick || missing_magick=true
 
 if "$check_only"; then
   python_ready || die 'Python 3.10+ is required; run the installer without --check.'
-elif "$missing_python" || "$missing_tex" || "$missing_poppler" || "$missing_rsvg"; then
+elif "$missing_python" || "$missing_tex" || "$missing_poppler" || "$missing_rsvg" || "$missing_magick"; then
   case "$platform" in
     Darwin)
       have brew || die 'Install Homebrew from https://brew.sh, then rerun this script.'
@@ -96,6 +98,7 @@ elif "$missing_python" || "$missing_tex" || "$missing_poppler" || "$missing_rsvg
       if "$missing_python"; then packages+=(python); fi
       if "$missing_poppler"; then packages+=(poppler); fi
       if "$missing_rsvg"; then packages+=(librsvg); fi
+      if "$missing_magick"; then packages+=(imagemagick); fi
       if [ "${#packages[@]}" -gt 0 ]; then run brew install "${packages[@]}"; fi
       if "$missing_tex"; then run brew install --cask mactex-no-gui; fi
       if ! "$dry_run"; then
@@ -121,6 +124,7 @@ elif "$missing_python" || "$missing_tex" || "$missing_poppler" || "$missing_rsvg
       fi
       if "$missing_poppler"; then packages+=(poppler-utils); fi
       if "$missing_rsvg"; then packages+=(librsvg2-bin); fi
+      if "$missing_magick"; then packages+=(imagemagick); fi
       run "${apt_command[@]}" update
       run "${apt_command[@]}" install -y --no-install-recommends "${packages[@]}"
       ;;

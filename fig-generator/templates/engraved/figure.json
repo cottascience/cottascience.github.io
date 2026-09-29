@@ -7,6 +7,6 @@
   "data_source": "Sphere volume ratios computed from V = (4/3) pi r cubed; drawing uses fiziko.",
   "width": 680,
   "seed": 1729,
-  "font": "TeX Gyre Pagella",
+  "font": "JetBrains Mono",
   "requires": ["fiziko"]
 }

@@ -1,4 +1,344 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-09-27T08:09:01+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Leonardo Cotta</title><subtitle>ML &amp; I</subtitle><entry><title type="html">NeurIPS 2025</title><link href="http://localhost:4000/neurips/2025/11/24/neurips25.html" rel="alternate" type="text/html" title="NeurIPS 2025" /><published>2025-11-24T15:01:46+00:00</published><updated>2025-11-24T15:01:46+00:00</updated><id>http://localhost:4000/neurips/2025/11/24/neurips25</id><content type="html" xml:base="http://localhost:4000/neurips/2025/11/24/neurips25.html"><![CDATA[<figure class="fig">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-09-29T09:39:40+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Leonardo Cotta</title><subtitle>ML &amp; I</subtitle><entry><title type="html">Joyful noise</title><link href="http://localhost:4000/technical/2026/09/27/noise.html" rel="alternate" type="text/html" title="Joyful noise" /><published>2026-09-27T05:56:46+01:00</published><updated>2026-09-27T05:56:46+01:00</updated><id>http://localhost:4000/technical/2026/09/27/noise</id><content type="html" xml:base="http://localhost:4000/technical/2026/09/27/noise.html"><![CDATA[<figure class="fig">
+  <img src="/assets/images/noise.jpg" alt="A symmetric, Rorschach-like blot of wavy grey noise with a human figure, arms raised, at its center." /></figure>
+
+<p>Let’s start with our old friend, the loaded die. Its faces are weighted $(0.05,\;0.10,\;0.15,\;0.20,\;0.20,\;0.30)$. Everything a probabilist could want is in that vector: its mean, its favorite face, etc. And yet, that vector is not enough to make a computer actually roll the die. The question we start with is: <em>how does a list of numbers become an outcome</em>?</p>
+
+<p>There’s a library call for this, of course. Let’s ignore it, and obssess over the question a little bit.</p>
+
+<p>We’ll allow ourselves exactly one treat: a function that returns a number drawn uniformly from $[0,1)$. We’ll treat it as a basic instruction available and take it on faith for most of the way <label for="sn-unique-id" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-unique-id" class="margin-toggle" /><span class="sidenote">We’ll discuss how to build this instruction in the end, don’t worry.</span>
+.</p>
+
+<p>As we’ll see, that instruction is already enough to build most insteresting programs we can think of. For our initial one, cut the unit interval into six pieces whose lengths are the six probabilities,</p>
+
+\[[0,.05),\quad [.05,.15),\quad [.15,.30),\quad [.30,.50),\quad [.50,.70),\quad [.70,1),\]
+
+<p>draw a number, and report which piece it fell in. A draw of $0.42$ rolls a four; $0.91$ rolls a six. Someone who’s never met probability theory would look at this and feel that it works, and anyone who has will know why<label for="sn-unique-id" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-unique-id" class="margin-toggle" /><span class="sidenote">The chance of landing in a piece is its length, which is exactly the probability we gave the face</span>
+.</p>
+
+<p>What I love here is how little of the algorithm is actually random. Once the noise (random number) is drawn, everything else is a lookup. Pass that number in as an argument and the whole die becomes an ordinary deterministic function.</p>
+
+<p>That setup, a source of randomness and a function that transforms it into something interesting, explains most of modern generative modeling methods. A language model spits out a distribution over the next token, and something has to turn it into a token. A diffusion sampler starts from noise and nudges it, little by little, into something that looks like data. A causal model writes each variable as a function of some exogenous noise. Different fields have given this idea different names (e.g., noise outsourcing, change of variables, the reparameterization trick) but the gist is the same: write the random thing you care about as a function of noise.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/die-interval-sampler/die-interval-sampler.svg" alt="A unit interval divided into six pieces sized by the die's probabilities; a draw at 0.42 falls in the fourth piece and outputs face 4." style="max-width: 431px;" /><figcaption><em>Cut the interval by the probabilities, then let a uniform draw pick the piece.</em></figcaption></figure>
+
+<h2 id="giving-randomness-an-input">Giving randomness an input</h2>
+
+<p>Let’s name things. Write $U$ for the uniform draw and $f$ for the interval lookup, so the simulated face is</p>
+
+\[Y=f(U),\qquad U\sim\operatorname{Uniform}[0,1).\]
+
+<p>I’ve seen many people at this point confuse the probability density function (pdf) of $Y$, that assigns probabilities to outcomes with the function $f$, that assigns an outcome to each input $u \in \text{supp}(U)$. It’s important to distinguish them now, because later on $f$ will be quite complex and even more different from the pdf.</p>
+
+<p>For any finite distribution $p_1,\ldots,p_K$ the construction is straightforward. Take cumulative sums</p>
+
+\[c_0=0,\qquad c_k=\sum_{j=1}^k p_j,\]
+
+<p>and set $f(u)=k$ whenever $c_{k-1}\le u&lt;c_k$. Then</p>
+
+\[P(f(U)=k)=P(c_{k-1}\le U&lt;c_k)=c_k-c_{k-1}=p_k,\]
+
+<p>and that’s the entire proof. In pseudocode, assuming the probabilities sum to 1:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample_category(probabilities, u):
+    cumulative = 0
+    for category, probability in probabilities:
+        cumulative += probability
+        if u &lt; cumulative:
+            return category
+</code></pre></div></div>
+
+<p>Notice that the function never calls a random number generator; its caller hands it <code class="language-plaintext highlighter-rouge">u</code>. It’s a small choice, but it means we can inspect the function, test a particular case, or run it twice on exactly the same input noise. This last bit is particular interesting for understanding counterfactuals in causal inference, but we’ll leave this topic for another day.</p>
+
+<p>Now let the probabilities depend on some context $x$, say, which of several loaded dice we’re holding. Replace $p_k$ by $p_k(x)$ and the boundaries shift accordingly. Our program doesn’t change, only the vector does:</p>
+
+\[Y=f(X,U),\qquad U\sim\operatorname{Uniform}[0,1),\qquad U\perp X.\]
+
+<p>The $\perp$ means independence: whatever the context, the noise is a fresh uniform draw. The context decides how to select the interval, and the noise decides where we land. The independence is important, since otherwise $U$’s distribution could depend on $X$, and we could then smuggle the whole sampling problem into the noise source and call it solved. The program formulation would’ve become really boring and, most importantly, useless.</p>
+
+<p>“Noise” is a slightly unfortunate word, by the way. It needn’t mean measurement error or anything corrupting a signal. It’s just the randomness we feed the sampler, and the sampler can spend it on a category, a sentence, or an entire image, with no addition in sight. I like using noise due to the noise-outsourcing theorem we’ll discuss, but sometimes our random input has meaning, e.g., in some causal graphs.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/context-moves-partition/context-moves-partition.svg" alt="Two differently partitioned intervals sharing a vertical line at u = 0.42, which selects face 4 in the first context and face 2 in the second." style="max-width: 444px;" /><figcaption><em>The context changes the partition; the noise selects a position.</em></figcaption></figure>
+
+<h2 id="from-intervals-to-distributions">From intervals to distributions</h2>
+
+<p>The interval trick gives us a general recipe for checking whether a sampler is right. Pick any set of outputs $A$, collect all the inputs $u$ that land in it, and measure how likely it is to draw one of them:</p>
+
+\[P(f(U)\in A)=P\bigl(U\in\{u:f(u)\in A\}\bigr).\]
+
+<p>Since our noise is uniform, “how likely” is just a length. For the die, the inputs that roll an even face add up to $0.10+0.20+0.30=0.60$ of the interval, which is exactly the probability of an even face. Getting a distribution this way, from a noise distribution and a function, is called the <em>pushforward</em> of the noise through $f$. What I like about it is that we never had to write down a density for the output: the noise and the function together already define it<label for="sn-pushforward-density" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-pushforward-density" class="margin-toggle" /><span class="sidenote">This matters a lot later. A diffusion model defines a perfectly good distribution over images without anyone writing down its density.</span>
+.</p>
+
+<p>Nothing here is special to dice, so enough with this toy example, and let’s move to real-valued variables. Any real random variable has a cumulative distribution function (CDF), $F(y)=P(Y\le y)$, going from 0 to 1 as $y$ grows. Now pick a random height $u$ between 0 and 1, draw a horizontal line at that height, and walk right until you hit the curve; where you hit it is your sample. A bit more formally, for $0&lt;u&lt;1$, this is the quantile function</p>
+
+\[Q(u)=\inf\{y:F(y)\ge u\}.\]
+
+<p>If $F$ is continuous and strictly increasing, $Q$ is just $F^{-1}$. The $\inf$ is there so the definition still works when $F$ has jumps (discrete outcomes) or flat stretches (gaps with no mass). In fact, the die is a special case: its CDF looks like a staircase, each jump hands one face a whole band of heights, and the width of that band is the face’s probability, i.e., we get our intervals back.</p>
+
+<p>Why does it work? Fix a threshold $y$. The quantile $Q(u)$ lands at or below $y$ exactly when $u\le F(y)$, so</p>
+
+\[P(Q(U)\le y)=P(U\le F(y))=F(y).\]
+
+<p>The output has the right CDF, hence the right distribution<label for="sn-quantile-endpoints" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-quantile-endpoints" class="margin-toggle" /><span class="sidenote">Some fine print: $Q(0)$ can be anything, since a uniform draw hits a single point with probability zero, and the closed boundaries here disagree with the half-open intervals we used for the die, which is equally harmless. Computers are finite and sometimes annoying, they will make us care about endpoints again at the end.</span>
+.</p>
+
+<p>Here’s a small example I like. Take $F(y)=y^2$ on $[0,1]$. Then $Q(u)=\sqrt u$, so to sample from it we draw a uniform number and take its square root. The input is spread evenly, but the output leans toward larger values, it maps to numbers higher than $1/2$ with probability $3/4$, since every $u$ above $1/4$ gets sent there.</p>
+
+<p>Conditioning on context works just like it did for the die. For each context $x$, use its own CDF,</p>
+
+\[F_x(y)=P(Y\le y\mid X=x),\qquad f(x,u)=Q_x(u),\]
+
+<p>and we have a program that samples any real-valued conditional distribution (modulo some measure-theoretic care we’ll get to in the next section). The same $f$ can produce a point mass for one $x$ and a wild multimodal distribution for another, while the noise stays the same boring uniform.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/quantile-sampling/quantile-sampling.svg" alt="Left, the curve y² with height 1/4 mapping to y = 1/2. Right, a staircase CDF where the band of heights from 0.30 to 0.50 maps entirely to face 4." style="max-width: 434px;" /><figcaption><em>Pick a height, read across to the CDF. A steep stretch concentrates outcomes; a jump claims a whole band of heights.</em></figcaption></figure>
+
+<h2 id="how-far-does-this-go">How far does this go?</h2>
+
+<p>Pretty far, actually. The general result goes by <em>noise outsourcing</em> (or the <em>randomization lemma</em>), and it says that for random variables $X$ and $Y$ living in standard Borel spaces, there’s a measurable function $f$ such that</p>
+
+\[(X,Y)\stackrel{d}{=}(X,f(X,U)),\qquad
+U\sim\operatorname{Uniform}[0,1),\qquad U\perp X,\]
+
+<p>where $\stackrel{d}{=}$ means equality in distribution, i.e., both pairs assign the same probability to every event. That’s exactly what we need to build a sampler<label for="sn-outsourcing-as" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-outsourcing-as" class="margin-toggle" /><span class="sidenote">There’s a stronger version with $Y=f(X,U)$ almost surely, possibly on an enlarged probability space, but it needs $U$ coupled to the variables already there: a fresh draw can’t reconstruct a $Y$ you’ve already observed. See <a href="https://www.numdam.org/item/10.1214/13-AIHP584.pdf">Austin, Lemma 3.1</a>.</span>
+.</p>
+
+<p>“Standard Borel” sounds scary, but it covers pretty much anything we’d call data: finite labels, integers, real vectors, images as arrays, finite strings. That’s because any such space can be measurably encoded into the unit interval, which is also why our quantile trick is the heart of the proof: encode outcomes as real numbers, sample the encoded distribution with a quantile, and decode. Doing this consistently across contexts takes some care, but no new randomness.</p>
+
+<p>A word of caution, though. <em>Measurable</em> roughly means the preimages of $f$ are sets we can assign probabilities to. It’s a compatibility condition with probability theory, not a promise that $f$ is computable, let alone fast or learnable. The theorem tells us the program exists; actually writing it is where generative modeling comes in.</p>
+
+<p>There’s one thing that bugged me the first time I saw this. How can a single random number carry enough randomness for a whole image, or even for two independent numbers?</p>
+
+<p>The trick is that an ideal uniform real has infinitely many binary digits,</p>
+
+\[U=0.b_1b_2b_3b_4\ldots,\]
+
+<p>and those digits are independent fair coin flips<label for="sn-binary-digits" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-binary-digits" class="margin-toggle" /><span class="sidenote">Any specific prefix of $n$ bits picks out an interval of length $2^{-n}$, so every prefix is equally likely. We’re ignoring numbers with two binary expansions, like $0.0111\ldots=0.1000\ldots$, which have probability zero.</span>
+. So we can deal the odd digits to one number and the even ones to another,</p>
+
+\[U_1=0.b_1b_3b_5\ldots,\qquad
+U_2=0.b_2b_4b_6\ldots,\]
+
+<p>and get two independent uniforms. Split the positions into more subsequences and you get as many as you want. The single $U$ in the theorem is really an infinite tape of random bits, way more than a floating-point number in a register could ever hold.</p>
+
+<p>In code, it’s cleaner to make the noise argument a vector or a stream, but the idea is the same: put every random choice in that argument, and once the stream is fixed, even a program that asks for fresh randomness halfway through is deterministic. It’s just reading further down the tape.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/bit-interleaving/bit-interleaving.svg" alt="The binary digits of U are split by position: odd digits form U1, even digits form U2." style="max-width: 456px;" /><figcaption><em>One uniform real is an infinite tape of fair bits. Deal them out and you get as many independent uniforms as you need.</em></figcaption></figure>
+
+<h2 id="making-gaussian-noise">Making Gaussian noise</h2>
+
+<p>So far our programs either looked up intervals or inverted CDFs. The next one is more geometric, and it’s a good test of whether we can spot the same idea when it doesn’t look like a lookup at all.</p>
+
+<p>Suppose we want two independent standard normals. Their joint density</p>
+
+\[p(z_1,z_2)=\frac{1}{2\pi}\exp\Bigl\{-\frac{z_1^2+z_2^2}{2}\Bigr\}\]
+
+<p>only depends on the distance from the origin, i.e., it looks the same in every direction. So a natural plan is to pick an angle uniformly around the circle and then pick a radius. The angle is easy: $\Theta=2\pi U_2$.</p>
+
+<p>The radius takes a bit more thought. You might be tempted to take the absolute value of a one-dimensional normal, but that’s wrong: a thin ring at radius $r$ has circumference $2\pi r$, so it holds more area than a ring of the same width closer to the origin. Its probability is roughly density times area,</p>
+
+\[\frac{1}{2\pi}\exp\{-r^2/2\}\cdot 2\pi r\,dr
+=r\exp\{-r^2/2\}\,dr,\]
+
+<p>so the radius has density $r\exp{-r^2/2}$ for $r\ge0$. Integrating from $r$ outward gives a surprisingly clean tail,</p>
+
+\[P(R&gt;r)=\int_r^\infty s\exp\{-s^2/2\}\,ds=\exp\{-r^2/2\},\]
+
+<p>which we can invert by hand. For a uniform $U_1$, set</p>
+
+\[R=\sqrt{-2\log U_1}.\]
+
+<p>To check it: for $r\ge0$, the event $R&gt;r$ is the same as $U_1&lt;\exp{-r^2/2}$, which has exactly the probability we want. With independent $U_1$ and $U_2$ we get an independent radius and angle, and going back to Cartesian coordinates,</p>
+
+\[Z_1=\sqrt{-2\log U_1}\cos(2\pi U_2),\qquad
+Z_2=\sqrt{-2\log U_1}\sin(2\pi U_2).\]
+
+<p>This is the Box–Muller transform<label for="sn-box-muller-check" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-box-muller-check" class="margin-toggle" /><span class="sidenote">To close the loop: the joint density of radius and angle is $r\exp{-r^2/2}/(2\pi)$. Dividing by the polar area factor $r$ gives back the Cartesian density, which factors into a standard normal in each coordinate, so we get normality and independence at once.</span>
+.</p>
+
+<p>Notice what happened: we used a uniform point in a square to pick a Gaussian point in the plane. Equal areas in the square carry equal probability, but their images can have very different sizes. Near the origin, the map squeezes probability into a small region; far away, it spreads a little probability over a huge one. It’s a pushforward again, just with geometry instead of labeled intervals.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/box-muller-map/box-muller-map.svg" alt="A unit square gridded into equal-probability cells maps to rings and wedges in the plane; two highlighted cells of equal probability become a small inner sector and a much larger outer one." style="max-width: 509px;" /><figcaption><em>Equal probability, unequal area: Box–Muller packs mass near the origin and spreads it thin far away.</em></figcaption></figure>
+
+<p>There’s a catch hiding in the formula: the logarithm needs $U_1&gt;0$. Mathematically that’s fine, since zero has probability zero and we can define the transform there however we want. A real generator, though, can return exactly zero, so the code has to make a choice. If your routine returns values in $[0,1)$, using <code class="language-plaintext highlighter-rouge">1 - uniform_0_1()</code> gives you $(0,1]$ and avoids the problem. Even then, as we’ll see at the end, this is only an approximation of the true Gaussian.</p>
+
+<p>Once we have a standard normal $Z$, conditional Gaussians are one line away:</p>
+
+\[Y=\mu(X)+\sigma(X)Z,\qquad Z\perp X.\]
+
+<p>The mean and standard deviation can come from a table, a physics model, or a neural network. For vectors, $Y=\mu(X)+L(X)Z$ with $Z\sim\mathcal N(0,I)$ has conditional covariance $L(X)L(X)^\top$. In other words, the noise coordinates are independent, the outputs aren’t, and all the dependence comes from the function. Keep this one in mind, since it’s the building block of diffusion models.</p>
+
+<!-- check this: Verify the original Box and Muller (1958), "A Note on the Generation of Random Normal Deviates," pp. 610–611, against an accessible primary copy before publication. Candidate DOI: https://doi.org/10.1214/aoms/1177706645. The derivation above is self-contained; the publisher's full text was not accessible during this edit. -->
+
+<h2 id="a-large-sampler-made-of-small-ones">A large sampler made of small ones</h2>
+
+<p>Now let’s chain samplers. Say we first sample $Y$ given $X$, and then $Z$ given $Y$. As programs,</p>
+
+\[Y=f(X,U),\qquad Z=g(Y,V),\]
+
+<p>with $U$ and $V$ independent of each other and of $X$. Plugging one into the other,</p>
+
+\[Z=g(f(X,U),V),\]
+
+<p>so the whole process is a deterministic function of the context and two noise inputs. If we wanted the distribution of $Z$ as a formula, we’d have to sum or integrate over $Y$, which can be painful. To draw a sample, we just run the functions in order. To me, this is the main practical appeal of the functional view: we can run complicated models without ever working out their distributions.</p>
+
+<p>One detail matters here: the noise inputs must be independent. Take $Y=\mathbf 1{U&lt;1/2}$, where $\mathbf 1$ is one when its condition holds and zero otherwise, so $Y$ is a fair coin. Apply the same test to an independent $V$ and we get a second, independent coin $Z$. Reuse $U$ instead and we get $Z=Y$ every single time. Putting all the randomness on one tape doesn’t mean every step reads the same spot on it.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/sampler-composition/sampler-composition.svg" alt="A chain X to Y to Z, redrawn as deterministic boxes f and g receiving separate noise inputs U and V, enclosed in one function H." style="max-width: 312px;" /><figcaption><em>Two sampling steps become one deterministic function of the context and two independent noise inputs.</em></figcaption></figure>
+
+<p>Autoregressive language models are a nice concrete example. Let $X$ be a prompt and $Y_1,\ldots,Y_n$ the generated tokens. For a fixed length $n$, the model’s joint distribution factors as</p>
+
+\[p_\theta(y_1,\ldots,y_n\mid x)
+=\prod_{t=1}^n p_\theta(y_t\mid x,y_{&lt;t}),\]
+
+<p>where $y_{&lt;t}$ is everything before position $t$ and $\theta$ are the learned parameters. At each step, the network computes a probability vector over the vocabulary (a deterministic computation, given its inputs), and a sampling step turns that vector into a token.</p>
+
+<p>We already know how to do that last part: give each token in the vocabulary an interval as long as its probability, and draw a fresh uniform,</p>
+
+\[Y_t=C\bigl(p_\theta(\cdot\mid X,Y_{&lt;t}),U_t\bigr),\]
+
+<p>where $C$ is our categorical sampler from before. Say the prompt is “The cat sat on the” and our imaginary model gives “mat”, “sofa”, and “roof” probabilities $0.50$, $0.30$, and $0.20$. Then $u_t=0.63$ picks “sofa”. That token becomes part of the context for the next step, which is why one early draw can change every distribution that comes after it.</p>
+
+<p>Repeating this samples exactly the joint distribution above, since the probability of following any given path is the product of the conditionals along it. A stop token or a length limit takes care of variable-length text. Collecting the uniforms into a tape $\mathbf U=(U_1,U_2,\ldots)$, the whole thing becomes</p>
+
+\[Y=F_\theta(X,\mathbf U),\]
+
+<p>where $F_\theta$ bundles the network calls, the categorical lookups, and the stopping rule<label for="sn-categorical-impl" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-categorical-impl" class="margin-toggle" /><span class="sidenote">Real implementations often use other categorical algorithms, e.g., the Gumbel-max trick, but our interval lookup is already an exact sampler in the ideal setting.</span>
+.</p>
+
+<p>This also makes clear what decoding choices do. Greedy decoding (always picking the most likely token) follows a deterministic path and doesn’t sample from the model at all. Temperature, top-$k$, and friends change the probability vectors before sampling. So the distribution of generated text is a property of the model <em>and</em> its decoder, not of the model alone.</p>
+
+<p>Diffusion models fit the same mold. During training they see data corrupted with more and more noise; at generation time they go the other way, starting from pure noise and applying learned updates that move it toward data. To keep the prompt $X$ separate, let $Z_T$ be the initial noisy vector and $Z_0$ the output. A common reverse step is</p>
+
+\[Z_T=\varepsilon_T,\qquad
+Z_{t-1}=\mu_\theta(Z_t,t,X)+\sigma_t\varepsilon_{t-1},\]
+
+<p>with independent standard normal $\varepsilon$’s, also independent of $X$. The mean depends on the current state, the step, and whatever we’re conditioning on, and the noise term adds some spread around it. That’s our conditional Gaussian from before, applied over and over. The original <a href="https://arxiv.org/pdf/2006.11239">DDPM sampling algorithm</a> has exactly this shape, with a specific parameterization of the mean and no noise at the last step.</p>
+
+<p>Since those Gaussians can come from uniforms (via Box–Muller, say), the whole chain is again a function of the context and a noise tape. Some samplers only need the initial noise: in deterministic <a href="https://arxiv.org/html/2010.02502v4">DDIM</a>, the later steps add no randomness at all, so fixing $Z_T$ fixes the whole trajectory.</p>
+
+<p>So text and diffusion models are doing the same thing mathematically: running deterministic functions on context plus independent noise. One fills in the output a token at a time by sampling from successive distributions; the other evolves a whole noisy state through a chain of transitions. Those internal differences matter a lot for training and compute, but neither needs any special kind of randomness.</p>
+
+<p>Of course, a sampler defining some distribution doesn’t mean it’s the right one. Whether the outputs look like real text or real images depends on training, capacity, and the sampling procedure, and the theorem guarantees none of that. What it gives us is a clear language for asking where a model gets it right or wrong.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/text-vs-diffusion/text-vs-diffusion.svg" alt="Two parallel chains. Text grows one token per step, each chosen by a categorical lookup with its own uniform input. A noisy grid becomes a clean pattern through Gaussian updates. Both are labeled Y = F(X, U)." style="max-width: 383px;" /><figcaption><em>Different states, same skeleton: deterministic updates driven by independent noise.</em></figcaption></figure>
+
+<h2 id="why-the-choice-of-function-matters">Why the choice of function matters</h2>
+
+<p>Once generation is written as a function, the obvious next step is to learn that function. Suppose $f_\theta$ has parameters $\theta$ and we want to minimize an expected loss,</p>
+
+\[L(\theta)=\mathbb E_U[\ell(f_\theta(U))].\]
+
+<p>The nice thing is that the distribution of $U$ doesn’t depend on $\theta$. So if $f_\theta$ is differentiable (and the usual conditions for swapping derivatives and expectations hold), we can estimate gradients by sampling $U$ and backpropagating straight through the program:</p>
+
+\[\nabla_\theta L(\theta)
+=\mathbb E_U[\nabla_\theta\ell(f_\theta(U))].\]
+
+<p>For a Gaussian $Y=\mu+\sigma Z$, holding $Z$ fixed gives $\partial Y/\partial\mu=1$ and $\partial Y/\partial\sigma=Z$. That’s the reparameterization trick, the thing that makes VAEs trainable. But those regularity conditions really matter: as <a href="https://jmlr.org/papers/volume21/19-322/19-322.pdf">Bloem-Reddy and Teh</a> point out in their discussion of noise outsourcing, the theorem only gives you a measurable $f$, not a differentiable or convenient one.</p>
+
+<p>Our categorical sampler is the perfect example of things going wrong. Take a Bernoulli sample with success probability $p$,</p>
+
+\[Y_p=\mathbf 1\{U&lt;p\}.\]
+
+<p>For a fixed $u$, nudging $p$ almost never changes the sample, so its derivative with respect to $p$ is zero everywhere except at the jump $p=u$. And yet</p>
+
+\[\mathbb E[Y_p]=p,\qquad
+\frac{d}{dp}\mathbb E[Y_p]=1,\]
+
+<p>so backpropagating through the sample misses the effect entirely. The expectation changes because the boundary moves and sweeps over more noise values, and derivatives taken away from the boundary can’t see that.</p>
+
+<p>So knowing that $f$ exists doesn’t tell us how to optimize it. Depending on the problem, we may need a smoother representation, a gradient estimator that works with probabilities instead of samples (e.g., REINFORCE), or an objective that avoids differentiating through discrete samples altogether.</p>
+
+<h2 id="the-same-distribution-can-describe-different-worlds">The same distribution can describe different worlds</h2>
+
+<p>There’s another freedom in picking $f$, and this one matters even if we never take a derivative. Our loaded die doesn’t care where its intervals sit: move the interval for six to the front, shuffle the rest, and the probabilities don’t change. But now $u=0.42$ might roll a different face.</p>
+
+<p>In other words, matching a distribution says nothing about what happens when we <em>reuse the same noise</em>. This gets interesting when we compare two contexts. Evaluating $f(x_0,U)$ and $f(x_1,U)$ with the same $U$ gives a joint distribution over two outputs, called a <em>coupling</em>. Each output has the right distribution on its own, but how the two relate depends entirely on which $f$ we picked.</p>
+
+<p>Here’s a small example. A system has two modes, $x=0$ and $x=1$, and a binary outcome. Mode 0 succeeds with probability $1/4$ and mode 1 with probability $3/4$. One valid sampler is</p>
+
+\[f(0,u)=\mathbf 1\{u&lt;1/4\},\qquad
+f(1,u)=\mathbf 1\{u&lt;3/4\}.\]
+
+<p>With this one, switching modes while holding $u$ fixed can never turn a success into a failure: every $u$ that succeeds in mode 0 still succeeds in mode 1. Another, equally valid sampler is</p>
+
+\[g(0,u)=\mathbf 1\{u&lt;1/4\},\qquad
+g(1,u)=\mathbf 1\{u\ge1/4\}.\]
+
+<p>The probabilities are still $1/4$ and $3/4$, but now every $u$ that succeeds in mode 0 fails in mode 1. At $u=0.10$, $f$ gives the pair $(1,1)$ and $g$ gives $(1,0)$, and under $g$ the higher success rate comes entirely from turning the other failures into successes.</p>
+
+<p>Both samplers agree on each mode’s success rate, and on the average gain of $1/2$, but they completely disagree on whether any particular success survives the switch. No amount of knowledge about the two probabilities can settle which one is right.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/coupling-f-vs-g/coupling-f-vs-g.svg" alt="Four strips comparing samplers f and g in two modes. Both have success rates 1/4 and 3/4, but f's success regions are nested and g's are disjoint, so at u = 0.10 f gives (1,1) and g gives (1,0)." style="max-width: 397px;" /><figcaption><em>Same success rates, different worlds: f preserves every success, g destroys every one.</em></figcaption></figure>
+
+<p>This is exactly where functional representations meet causality. A structural causal model gives each variable an equation,</p>
+
+\[V_i=h_i(\operatorname{Pa}_i,E_i),\]
+
+<p>where $\operatorname{Pa}_i$ are its direct causes and $E_i$ captures everything else that affects it. In an acyclic model we can evaluate these equations parents-first, just like our chained samplers. The difference is that a causal model claims more: its equations are mechanisms that keep working when we intervene on other parts of the system. Setting $V_j=a$ replaces its equation with the constant $a$ and leaves the rest alone. This is the structural view laid out in <a href="https://projecteuclid.org/journals/statistics-surveys/volume-3/issue-none/Causal-inference-in-statistics-An-overview/10.1214/09-SS057.pdf">Pearl’s overview of causal inference</a>.</p>
+
+<p>With such a model, we can compare interventions while holding the exogenous noise fixed, which is what a counterfactual is<label for="sn-abduction" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-abduction" class="margin-toggle" /><span class="sidenote">For an observed individual, we first infer what the observations tell us about their noise, and only then run the modified equations. That inference can leave uncertainty, since an observed outcome rarely pins down a unique noise value.</span>
+.</p>
+
+<p>Our two samplers from before could be two structural mechanisms for the mode switch. If the mode is assigned independently of $U$, both match the same observational data and the same interventional success rates, and yet they give different counterfactual answers. Picking one requires an assumption beyond the data, e.g., that switching modes can never destroy an existing success.</p>
+
+<p>It’s also worth saying that writing a conditional as $Y=f(X,U)$ doesn’t make $X$ a cause of $Y$. We can usually factor the same joint distribution the other way around and write $X=g(Y,V)$, so being able to simulate in one direction says nothing about causation. Similarly, independent exogenous noise is a modeling assumption, and hidden common causes may require correlated or explicitly shared noise.</p>
+
+<p>What I like about the functional view here is that it makes these extra assumptions explicit. As soon as we ask what would happen to the same case under a different input, a sampler says more than just how often each output shows up.</p>
+
+<h2 id="where-the-uniform-comes-from">Where the uniform comes from</h2>
+
+<p>As promised, let’s finally look inside our basic instruction. On a regular computer, the uniform draw usually comes from a pseudorandom number generator (PRNG), which is itself a deterministic program. Write its internal state as $S_t$, its transition as $T$, and its output as $O$:</p>
+
+\[S_{t+1}=T(S_t),\qquad J_t=O(S_t).\]
+
+<p>A simple way to turn an integer output into a number in $[0,1)$ is</p>
+
+\[U_t=J_t/2^w,\qquad J_t\in\{0,1,\ldots,2^w-1\}.\]
+
+<p>So the possible values form a finite grid, and for $U_t$ to be uniform on it, $J_t$ has to be uniform over those integers; dividing by $2^w$ won’t fix a bad generator. Python’s <code class="language-plaintext highlighter-rouge">random()</code>, for instance, returns multiples of $2^{-53}$ in $[0,1)$, as its <a href="https://docs.python.org/3/library/random.html#recipes">documentation</a> explains.</p>
+
+<p>To see how this works without the real-world complexity, take the toy rule</p>
+
+\[S_{t+1}=(5S_t+1)\bmod16,\qquad U_t=S_t/16.\]
+
+<p>Starting from zero, the states are</p>
+
+\[0,1,6,15,12,13,2,11,8,9,14,7,4,5,10,3,0,\ldots\]
+
+<p>Every state shows up exactly once before the cycle repeats. If we start from a uniformly chosen state, every later state is also uniform, since each step just permutes the sixteen values. Yet the sequence is as far from independent as it gets: see one state and you know the next. A perfect histogram doesn’t mean good randomness<label for="sn-toy-prng" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-toy-prng" class="margin-toggle" /><span class="sidenote">Please don’t use this generator for anything serious. It’s only here to show the mechanism.</span>
+.</p>
+
+<p>Real generators have much larger states and are designed to avoid the patterns that would matter for their intended use. Still, no generator can create unlimited independent bits from a finite seed. Given the seed, the whole stream is determined; if the seed is random, the stream is a random variable, but one that can only take as many values as there are seeds.</p>
+
+<p>Finite precision also changes the distributions our samplers produce. On a grid of sixteen equally likely points, any deterministic binary sampler succeeds with a probability that’s a multiple of $1/16$, so it can’t hit $0.10$ exactly. Box–Muller applied to finitely many input pairs gives finitely many outputs, and if $u_{\min}$ is the smallest positive value $U_1$ can take, the largest radius we can ever get is</p>
+
+\[R_{\max}=\sqrt{-2\log u_{\min}}.\]
+
+<p>The real Gaussian has no such limit. In practice these approximations are usually fine, but they’re a property of the implementation, not of the math.</p>
+
+<p>Putting it all together, a seeded sampler unpacks as</p>
+
+\[S_0
+\xrightarrow{\text{generator}}
+\text{noise stream}
+\xrightarrow{\text{sampling functions, with context }X}
+Y.\]
+
+<p>For a fixed seed, context, and deterministic implementation, the output is fixed. To reproduce it in a larger system, you also need to preserve everything that affects the computation, including the order in which random numbers are consumed. Change the sampler and the same seed can mean something completely different.</p>
+
+<figure class="fig">
+  <img src="/assets/images/figures/seed-to-sample/seed-to-sample.svg" alt="A pipeline from seed through generator state and a 16-point grid to the sampling function and output, with an inset showing a boundary at 0.10 between grid points 1/16 and 2/16, giving an actual probability of 0.125." style="max-width: 436px;" /><figcaption><em>All the way down: a seed drives a finite grid, and a probability boundary can only fall between grid points.</em></figcaption></figure>
+
+<p>We started with a loaded die and no way to roll it. Giving the roll a noise argument made that missing step explicit, and it also let us chain samplers, differentiate through them, and ask what’s being held fixed when we compare two outcomes.</p>
+
+<p>So whenever I meet a new generative model, I find it useful to ask two questions: where does the independent randomness come in, and what happens once I fix it? The answer might be a sequence of vocabulary lookups, a long chain of updates to a noisy vector, or equations meant to describe a physical mechanism. Writing it as a function won’t solve the hard parts of modeling, but it gives us something concrete to look at: how a boring uniform random number becomes the distribution, or the world, we wanted to describe.</p>]]></content><author><name></name></author><category term="technical" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/og/posts/noise.png" /><media:content medium="image" url="http://localhost:4000/assets/images/og/posts/noise.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">NeurIPS 2025</title><link href="http://localhost:4000/neurips/2025/11/24/neurips25.html" rel="alternate" type="text/html" title="NeurIPS 2025" /><published>2025-11-24T15:01:46+00:00</published><updated>2025-11-24T15:01:46+00:00</updated><id>http://localhost:4000/neurips/2025/11/24/neurips25</id><content type="html" xml:base="http://localhost:4000/neurips/2025/11/24/neurips25.html"><![CDATA[<figure class="fig">
   <img src="/assets/images/sandiego.png" alt="San Diego" /><figcaption><em>San Diego, host of NeurIPS 2025.</em></figcaption></figure>
 
 <blockquote>

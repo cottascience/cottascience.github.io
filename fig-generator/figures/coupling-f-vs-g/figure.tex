@@ -1,0 +1,59 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+\begin{tikzpicture}
+  \def\w{4.2}\def\h{0.75}
+  % strip: #1 x-offset, #2 y, #3 success start, #4 success end (fractions).
+  % Success = crosshatch, failure = paper (pilot segment styling).
+  \newcommand{\strip}[4]{%
+    \fill[paper] (#1,#2) rectangle ++(\w,\h);
+    \fill[figure crosshatch] ({#1+#3*\w},#2) rectangle ({#1+#4*\w},{#2+\h});
+    \draw[ink,line width=1.4pt] (#1,#2) rectangle ++(\w,\h);
+    \draw[ink] ({#1+#3*\w},#2) -- ++(0,\h) ({#1+#4*\w},#2) -- ++(0,\h);
+    \foreach \t in {0.25,0.75} \draw[ink] ({#1+\t*\w},#2) -- ++(0,-0.15);
+  }
+  % one row of the joint-law table; #3=1 highlights it as a solid plate
+  \newcommand{\law}[4]{%
+    \ifnum#3=1
+      \node[figure solid,anchor=west,minimum width=2.5cm,minimum height=6mm,inner sep=2pt] at (10.0,#4) {\textbf{$#1$}\quad\textbf{$#2$}};
+    \else
+      \node[anchor=west,minimum width=2.5cm,minimum height=6mm,inner sep=2pt] at (10.0,#4) {$#1$\quad$#2$};
+    \fi
+  }
+  \FigureMasthead{-0.8}{12.6}{3.55}{}{}
+  \strip{0}{0}{0}{0.25}
+  \strip{5}{0}{0}{0.75}
+  \strip{0}{-2.3}{0}{0.25}
+  \strip{5}{-2.3}{0.25}{1}
+  % headers
+  \node[anchor=south] at (\w/2,1.6) {mode $0$};
+  \node[anchor=south] at (5+\w/2,1.6) {mode $1$};
+  \node[anchor=east] at (-0.25,\h/2) {$f$};
+  \node[anchor=east] at (-0.25,-2.3+\h/2) {$g$};
+  % success rates
+  \foreach \x/\y/\r in {0/0/{1/4},5/0/{3/4},0/-2.3/{1/4},5/-2.3/{3/4}}
+    \node[figure note,anchor=south east,inner sep=1pt] at (\x+\w,\y+\h+0.05) {$\r$};
+  % tick labels
+  \foreach \x in {0,5} {
+    \node[font=\FigureNoteFont,anchor=north,inner sep=1pt] at (\x,-2.3-0.15) {$0$};
+    \node[font=\FigureNoteFont,anchor=north,inner sep=1pt] at (\x+0.25*\w,-2.3-0.15) {$1/4$};
+    \node[font=\FigureNoteFont,anchor=north,inner sep=1pt] at (\x+0.75*\w,-2.3-0.15) {$3/4$};
+    \node[font=\FigureNoteFont,anchor=north,inner sep=1pt] at (\x+\w,-2.3-0.15) {$1$};
+  }
+  % u = 0.10 line, paper halo so it reads over crosshatch
+  \foreach \x in {0,5} {
+    \draw[paper,line width=3.4pt] (\x+0.1*\w,-2.3-0.1) -- (\x+0.1*\w,\h+0.45);
+    \draw[ink,dashed,line width=1.2pt] (\x+0.1*\w,-2.3-0.1) -- (\x+0.1*\w,\h+0.45);
+  }
+  \node[font=\FigureNoteFont,anchor=south west,inner sep=1pt] at (0.1*\w-0.3,\h+0.5) {$u=0.10$};
+  % joint laws
+  \node[figure note,anchor=south west] at (10.0,1.6) {$(Y_0,Y_1)$};
+  \law{(1,1)}{1/4}{1}{\h/2+0.55}
+  \law{(0,1)}{1/2}{0}{\h/2-0.1}
+  \law{(0,0)}{1/4}{0}{\h/2-0.75}
+  \law{(1,0)}{1/4}{1}{-2.3+\h/2+0.3}
+  \law{(0,1)}{3/4}{0}{-2.3+\h/2-0.35}
+  \draw[figure rule thin] (-0.8,-0.8) -- (12.6,-0.8);
+  \FigureFootRule{-0.8}{12.6}{-3.35}
+\end{tikzpicture}
+\end{document}

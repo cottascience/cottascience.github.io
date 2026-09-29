@@ -1,0 +1,12 @@
+{
+  "id": "bit-interleaving",
+  "title": "Splitting one uniform into two",
+  "alt": "The binary digits of U are split by position: odd digits form U1, even digits form U2.",
+  "caption": "One uniform real is an infinite tape of fair bits. Deal them out and you get as many independent uniforms as you need.",
+  "data_kind": "diagram",
+  "data_source": "Conceptual diagram of dealing the binary digits of an ideal uniform real into odd and even positions.",
+  "width": 456,
+  "seed": 1729,
+  "font": "JetBrains Mono",
+  "requires": []
+}

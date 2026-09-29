@@ -1,0 +1,55 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogfigure}
+\begin{document}
+\begin{tikzpicture}[cell/.style={figure crosshatch},lab/.style={fill=paper,inner sep=1.5pt}]
+  % Left: unit square, U2 horizontal, U1 vertical; 8 strips x 4 bands, each cell 1/32.
+  \def\S{5.2}
+  \FigureMasthead{-1.7}{16.4}{4.35}{}{}
+  \begin{scope}[shift={(0,-\S/2)}]
+    % Highlighted cells A = (0,1/8] x (3/4,1], B = (0,1/8] x (1/4,1/2].
+    \fill[cell] (0,.75*\S) rectangle (\S/8,\S);
+    \fill[cell] (0,.25*\S) rectangle (\S/8,.5*\S);
+    \foreach \k in {1,...,7} \draw[muted,line width=.4pt] (\k*\S/8,0) -- (\k*\S/8,\S);
+    \foreach \v in {.25,.5,.75} \draw[ink,line width=.6pt] (0,\v*\S) -- (\S,\v*\S);
+    \draw[ink,line width=1.4pt] (0,0) -- (0,\S) -- (\S,\S) -- (\S,0);
+    \draw[ink,dashed,line width=1pt] (0,0) -- (\S,0);
+    \draw[figure emph] (0,.75*\S) rectangle (\S/8,\S);
+    \draw[figure emph] (0,.25*\S) rectangle (\S/8,.5*\S);
+    \node[lab] at (\S/16,.875*\S) {$A$};
+    \node[lab] at (\S/16,.375*\S) {$B$};
+    \foreach \v/\t in {0/0,.25/\tfrac14,.5/\tfrac12,.75/\tfrac34,1/1}
+      \node[font=\FigureNoteFont,anchor=east] at (-.1,\v*\S) {$\t$};
+    \node[font=\FigureNoteFont,anchor=north] at (0,-.1) {$0$};
+    \node[font=\FigureNoteFont,anchor=north] at (\S,-.1) {$1$};
+    \node[anchor=north] at (\S/2,-.25) {$U_2$};
+    \node[anchor=east] at (-.75,\S/2) {$U_1$};
+    \node[figure note,anchor=south] at (\S/2,\S+.1) {$U_1\to1$: $r\to0$};
+  \end{scope}
+
+  \draw[figure emph arrow] (\S+.5,0) -- (\S+3.3,0);
+  \node[figure note,anchor=north,align=center] at (\S+2.05,-.25) {$r=\sqrt{-2\log U_1}$\\$\theta=2\pi U_2$};
+
+  % Right: Gaussian plane. Radii sqrt(-2 log u) for u = 3/4, 1/2, 1/4, scaled 1.4 cm per unit.
+  \begin{scope}[shift={(\S+7.3,0)},x=1.4cm,y=1.4cm]
+    \def\ra{0.758528}\def\rb{1.177410}\def\rc{1.665109}\def\rd{2.3}
+    \fill[cell] (0,0) -- (0:\ra) arc[start angle=0,end angle=45,radius=\ra] -- cycle;
+    \fill[cell] (0:\rb) -- (0:\rc) arc[start angle=0,end angle=45,radius=\rc]
+      -- (45:\rb) arc[start angle=45,end angle=0,radius=\rb] -- cycle;
+    \foreach \a in {0,45,...,315} {
+      \draw[muted,line width=.4pt] (0,0) -- (\a:\rc);
+      \draw[muted,line width=.4pt,dotted] (\a:\rc) -- (\a:\rd);
+    }
+    \foreach \r in {\ra,\rb} \draw[ink,line width=.6pt] (0,0) circle[radius=\r];
+    \draw[ink,line width=.6pt] (0,0) circle[radius=\rc];
+    \draw[muted,line width=.4pt,dotted] (0,0) circle[radius=2.0];
+    \foreach \a in {22.5,112.5,202.5,292.5}
+      \draw[-{Stealth[length=1.6mm]},muted,line width=.5pt] (\a:\rc+.12) -- (\a:\rc+.5);
+    \draw[figure emph] (0,0) -- (0:\ra) arc[start angle=0,end angle=45,radius=\ra] -- cycle;
+    \draw[figure emph] (0:\rb) -- (0:\rc) arc[start angle=0,end angle=45,radius=\rc]
+      -- (45:\rb) arc[start angle=45,end angle=0,radius=\rb] -- cycle;
+    \node[lab] at (22.5:.45) {$A$};
+    \node[lab] at (22.5:1.42) {$B$};
+  \end{scope}
+  \FigureFootRule{-1.7}{16.4}{-3.9}
+\end{tikzpicture}
+\end{document}

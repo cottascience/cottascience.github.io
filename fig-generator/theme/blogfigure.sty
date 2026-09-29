@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{blogfigure}[2026/09/09 Blog figure theme]
+\ProvidesPackage{blogfigure}[2026/09/27 Blog figure theme: black-and-white newsprint]
 \RequirePackage{iftex}
 \ifLuaTeX\else
   \PackageError{blogfigure}{LuaLaTeX is required}{Use figure.py render.}
@@ -10,27 +10,50 @@
 \RequirePackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,patterns.meta}
 \InputIfFileExists{settings.tex}{}{}
-\providecommand{\FigureFont}{TeX Gyre Pagella}
+\providecommand{\FigureFont}{JetBrains Mono}
 \providecommand{\FigureSeed}{1729}
 \setmainfont{\FigureFont}
 \setmathfont{TeX Gyre Pagella Math}
-\definecolor{paper}{HTML}{FFFDFA}
-\definecolor{ink}{HTML}{2A2620}
-\definecolor{muted}{HTML}{5A5F7A}
-\definecolor{accent}{HTML}{B5563A}
-\definecolor{grid}{HTML}{DED8CF}
+% Mono digits and Latin letters in math so equations match the label face.
+\setmathfont{\FigureFont}[range={up/{num,Latin,latin}}]
+\setmathfont{\FigureFont\space Italic}[range={it/{Latin,latin}}]
+% Matches assets/main.scss: pure black-and-white, no spot color.
+\definecolor{paper}{HTML}{FFFFFF}
+\definecolor{ink}{HTML}{111111}
+\definecolor{muted}{HTML}{6B6B6B}
+\definecolor{grid}{HTML}{DDDDDD}
+% ponytail: accent kept as a name so sources compile; emphasis is weight/fill, not hue.
+\definecolor{accent}{HTML}{111111}
 \color{ink}
 \pagestyle{empty}
 \newcommand{\FigureLabelFont}{\fontsize{16}{20}\selectfont}
 \newcommand{\FigureNoteFont}{\fontsize{14}{17}\selectfont}
+\newcommand{\FigureKickerFont}{\fontsize{13}{16}\selectfont}
 \AtBeginDocument{\FigureLabelFont}
 \pgfmathsetseed{\FigureSeed}
 \tikzset{
   every picture/.style={font=\FigureLabelFont,draw=ink,line width=.7pt},
   figure arrow/.style={-{Stealth[length=2.5mm]},draw=ink,line width=.8pt},
-  figure box/.style={draw=ink,fill=paper,rounded corners=2pt,
+  figure emph arrow/.style={-{Stealth[length=3mm]},draw=ink,line width=1.6pt},
+  figure box/.style={draw=ink,fill=paper,rounded corners=0pt,
     minimum height=13mm,text width=38mm,align=center,inner sep=5pt},
-  figure hatch/.style={pattern={Lines[angle=45,distance=4pt,line width=.35pt]},pattern color=muted},
+  figure emph/.style={draw=ink,line width=1.6pt},
+  figure hatch/.style={pattern={Lines[angle=45,distance=4pt,line width=.35pt]},pattern color=ink},
+  figure crosshatch/.style={pattern={Hatch[angle=45,distance=3.5pt,line width=.35pt]},pattern color=ink},
+  figure halftone/.style={pattern={Dots[distance=3pt,radius=.55pt]},pattern color=ink},
+  figure solid/.style={fill=ink,text=paper},
   figure note/.style={font=\FigureNoteFont\itshape,text=muted,align=center},
+  figure kicker/.style={font=\FigureKickerFont,text=ink,inner sep=0pt},
+  figure rule heavy/.style={draw=ink,line width=2.4pt},
+  figure rule thin/.style={draw=ink,line width=.5pt},
 }
+% Newspaper masthead: heavy/thin rule pair across [x0,x1], no text.
+% ponytail: #4/#5 (old kicker/tag) are ignored; kept so existing sources compile.
+% Usage: \FigureMasthead{x0}{x1}{y}{}{}
+\newcommand{\FigureMasthead}[5]{%
+  \draw[figure rule heavy] (#1,#3-0.55) -- (#2,#3-0.55);
+  \draw[figure rule thin] (#1,#3-0.69) -- (#2,#3-0.69);
+}
+% Closing rule under the figure.
+\newcommand{\FigureFootRule}[3]{\draw[figure rule heavy] (#1,#3) -- (#2,#3);}
 \endinput

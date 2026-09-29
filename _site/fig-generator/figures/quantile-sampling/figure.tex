@@ -1,0 +1,68 @@
+\documentclass[12pt,border=10pt]{standalone}
+\usepackage{blogplot}
+\begin{document}
+\begin{tikzpicture}
+  % Left: continuous CDF F(y)=y^2, quantile Q(u)=sqrt(u).
+  \begin{axis}[blog axis,name=left,width=7.6cm,height=7.6cm,
+    xlabel={$y$},ylabel={$u$},
+    xmin=0,xmax=1.05,ymin=0,ymax=1.08,
+    xtick={0,0.5,1},xticklabels={$0$,$\frac12$,$1$},
+    ytick={0,0.25,1},yticklabels={$0$,$\frac14$,$1$},
+    title={$F(y)=y^2$},title style={font=\FigureLabelFont}]
+    % bands: heights (1/4,1] and their image (1/2,1]
+    \fill[figure halftone] (axis cs:0,0.25) rectangle (axis cs:0.04,1);
+    \draw[line width=.5pt] (axis cs:0,0.25) rectangle (axis cs:0.04,1);
+    \fill[figure halftone] (axis cs:0.5,0) rectangle (axis cs:1,0.04);
+    \draw[line width=.5pt] (axis cs:0.5,0) rectangle (axis cs:1,0.04);
+    \addplot[ink,line width=1.2pt,domain=0:1,samples=80,mark=none]{x^2};
+    \draw[line width=1.6pt] (axis cs:0,0.25) -- (axis cs:0.5,0.25);
+    \draw[figure emph arrow] (axis cs:0.5,0.25) -- (axis cs:0.5,0.05);
+    \fill[ink] (axis cs:0.5,0.25) circle (2.4pt);
+  \end{axis}
+  % Right: die staircase CDF.
+  \begin{axis}[blog axis,at={($(left.east)+(1.6cm,0)$)},anchor=west,
+    width=7.6cm,height=7.6cm,
+    xlabel={face},
+    xmin=0.4,xmax=6.6,ymin=0,ymax=1.08,
+    xtick={1,2,3,4,5,6},
+    ytick={0,0.3,0.5,1},yticklabels={$0$,$.30$,$.50$,$1$},
+]
+    \fill[figure halftone] (axis cs:0.4,0.30) rectangle (axis cs:4,0.50);
+    % flat steps
+    \draw[ink,line width=1.2pt] (axis cs:0.4,0) -- (axis cs:1,0);
+    \draw[ink,line width=1.2pt] (axis cs:1,0.05) -- (axis cs:2,0.05);
+    \draw[ink,line width=1.2pt] (axis cs:2,0.15) -- (axis cs:3,0.15);
+    \draw[ink,line width=1.2pt] (axis cs:3,0.3) -- (axis cs:4,0.3);
+    \draw[ink,line width=1.2pt] (axis cs:4,0.5) -- (axis cs:5,0.5);
+    \draw[ink,line width=1.2pt] (axis cs:5,0.7) -- (axis cs:6,0.7);
+    \draw[ink,line width=1.2pt] (axis cs:6,1) -- (axis cs:6.6,1);
+    % jumps (dotted risers), open bottom, closed top
+    \draw[muted,dotted,line width=.6pt] (axis cs:1,0) -- (axis cs:1,0.05);
+    \filldraw[ink] (axis cs:1,0.05) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:1,0) circle (2.2pt);
+    \draw[muted,dotted,line width=.6pt] (axis cs:2,0.05) -- (axis cs:2,0.15);
+    \filldraw[ink] (axis cs:2,0.15) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:2,0.05) circle (2.2pt);
+    \draw[muted,dotted,line width=.6pt] (axis cs:3,0.15) -- (axis cs:3,0.3);
+    \filldraw[ink] (axis cs:3,0.3) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:3,0.15) circle (2.2pt);
+    \draw[muted,dotted,line width=.6pt] (axis cs:5,0.5) -- (axis cs:5,0.7);
+    \filldraw[ink] (axis cs:5,0.7) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:5,0.5) circle (2.2pt);
+    \draw[muted,dotted,line width=.6pt] (axis cs:6,0.7) -- (axis cs:6,1);
+    \filldraw[ink] (axis cs:6,1) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:6,0.7) circle (2.2pt);
+    \draw[line width=2pt] (axis cs:4,0.30) -- (axis cs:4,0.50);
+    \filldraw[ink] (axis cs:4,0.50) circle (2.2pt);
+    \filldraw[draw=ink,fill=paper] (axis cs:4,0.30) circle (2.2pt);
+    \draw[line width=1.6pt] (axis cs:0.4,0.42) -- (axis cs:4,0.42);
+    \node[fill=paper,inner sep=1.5pt,font=\FigureNoteFont,anchor=south] at (axis cs:2.2,0.54) {$u=0.42$};
+    \draw[figure emph arrow] (axis cs:4,0.42) -- (axis cs:4,0.04);
+  \end{axis}
+  \coordinate (nw) at (current bounding box.north west);
+  \coordinate (se) at (current bounding box.south east);
+  \draw[figure rule heavy] ($(nw)+(0,0.45)$) -- ($(se|-nw)+(0,0.45)$);
+  \draw[figure rule thin] ($(nw)+(0,0.31)$) -- ($(se|-nw)+(0,0.31)$);
+  \draw[figure rule heavy] ($(se-|nw)+(0,-0.3)$) -- ($(se)+(0,-0.3)$);
+\end{tikzpicture}
+\end{document}
